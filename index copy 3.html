@@ -212,7 +212,63 @@
   max-width: 700px;
 }
 
-#couple {
+    /* Couple */
+    #couple { 
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      padding: 40px 20px; 
+      display: none; 
+      color: white; 
+      text-align: center;
+    }
+
+.couple-info h2 {
+  color: #bfa57a;   /* Judul pasangan */
+  font-size: 28px;  /* opsional biar lebih gede */
+  margin-bottom: 10px;
+}
+
+.couple-info p {
+  color: #bfa57a;      /* Deskripsi (bisa putih biar kontras) */
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+
+    #couple::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url("109721.jpg") no-repeat center center;
+      background-size: cover;
+      opacity: 1;
+      z-index: -2;
+    }
+
+    #couple::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: -1;
+    }
+
+    .couple-slider {
+      position: relative;
+      width: 90%;
+      max-width: 400px;
+      margin: auto;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    .couple-slider img { width: 100%; display: none; }
+    .couple-slider img.active { display: block; }
+    .couple-info { margin-top: 20px; font-size: 16px; }
+
+#bride-groom {
   background: url("109721.jpg") no-repeat center center/cover;
   min-height: 100vh;
   display: flex;
@@ -223,7 +279,7 @@
   color: #bfa57a;
 }
 
-.couple-slider {
+.content-wrapper {
   max-width: 600px;
   border-radius: 20px;
   padding: 30px;
@@ -271,99 +327,6 @@
 }
 
 
-/* ===== SECTION UCAPAN & MAPS ===== */
-#ucapan-maps {
-  background: #fff;
-  color: #333;
-  padding: 20px 15px; /* sama kaya wedding-intro */
-  text-align: center;
-}
-
-#ucapan-maps .ucapan-maps-title {
-  font-family: 'Great Vibes', cursive;
-  font-size: 36px;
-  margin-bottom: 20px;
-  color: #bfa57a;
-}
-
-#ucapan-maps .ucapan-maps-subtitle {
-  font-family: 'Playfair Display', serif;
-  font-size: 14px;
-  line-height: 1.8;
-  max-width: 700px;
-  margin: 0 auto 25px;
-  color: #555;
-}
-
-/* Form Ucapan */
-#ucapan-maps .ucapan-maps-form textarea {
-  width: 100%;
-  max-width: 700px;
-  border: 1.5px solid #bfa57a;
-  border-radius: 8px;
-  padding: 12px;
-  font-size: 14px;
-  font-family: 'Playfair Display', serif;
-  resize: none;
-  transition: border 0.3s;
-}
-
-#ucapan-maps .ucapan-maps-form textarea:focus {
-  border-color: #8c7b52;
-  outline: none;
-}
-
-#ucapan-maps .ucapan-maps-btn {
-  margin-top: 15px;
-  padding: 10px 22px;
-  border: none;
-  border-radius: 6px;
-  background: #bfa57a;
-  color: #fff;
-  font-size: 14px;
-  font-family: 'Playfair Display', serif;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-#ucapan-maps .ucapan-maps-btn:hover {
-  background: #a68e65;
-}
-
-/* Maps */
-#ucapan-maps .ucapan-maps-location {
-  margin-top: 35px;
-}
-
-#ucapan-maps .ucapan-maps-location-title {
-  font-family: 'Great Vibes', cursive;
-  font-size: 30px;
-  margin-bottom: 15px;
-  color: #bfa57a;
-}
-
-#ucapan-maps .ucapan-maps-location iframe {
-  border-radius: 10px;
-  border: 1.5px solid #bfa57a;
-  max-width: 100%;
-  height: 300px;
-}
-
-#ucapan-maps .ucapan-maps-link {
-  display: inline-block;
-  margin-top: 12px;
-  color: #bfa57a;
-  font-weight: bold;
-  font-family: 'Playfair Display', serif;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-#ucapan-maps .ucapan-maps-link:hover {
-  color: #8c7b52;
-}
-
-
     /* === REVEAL ANIMATION === */
     .reveal {
       opacity: 0;
@@ -399,15 +362,12 @@
     </div>
   </div>
 
-<!-- ===== NAVIGASI + MUSIK ===== -->
-<div class="nav">
-  <button onclick="document.getElementById('hero').scrollIntoView({behavior:'smooth'})">🏠</button>
-  <button onclick="document.getElementById('wedding-intro').scrollIntoView({behavior:'smooth'})">💌</button>
-  <button onclick="document.getElementById('couple').scrollIntoView({behavior:'smooth'})">👩‍❤️‍👨</button>
-  <button onclick="document.getElementById('ucapan-maps').scrollIntoView({behavior:'smooth'})">📍</button>
-  <button id="music-btn" onclick="toggleMusic()">🎵</button>
-</div>
-
+      <!-- Navigasi + Musik -->
+    <div class="nav">
+      <button onclick="document.getElementById('hero').scrollIntoView()">🏠</button>
+      <button onclick="document.getElementById('couple').scrollIntoView()">👩‍❤️‍👨</button>
+      <button id="music-btn" onclick="toggleMusic()">🎵</button>
+    </div>
 
   <!-- ===== HALAMAN UTAMA ===== -->
   <section id="hero" class="reveal">
@@ -440,6 +400,30 @@
   <!-- ===== HALAMAN KEDUA ===== -->
   <section id="couple" class="reveal">
     <div class="couple-slider reveal">
+      <img src="2149043964.jpg" class="active">
+      <img src="2149043966.jpg">
+      <img src="2149043955.jpg">
+    </div>
+    <div class="couple-info reveal">
+      <h2>Busro & Hana</h2>
+      <p>Putra Bpk. X & Ibu Y<br>Putri Bpk. A & Ibu B</p>
+    </div>
+  </section>
+
+    <!-- ===== SECTION UCAPAN ===== -->
+  <section id="wedding-intro" class="reveal">
+    <h1 class="script">The Wedding of Busro & Hana</h1>
+    <p>
+      Atas Berkah dan Rahmat Tuhan Yang Maha Esa. <br>
+      Tanpa mengurangi rasa hormat, <br>
+      Kami mengundang Bapak/Ibu/Saudara/i serta kerabat sekalian <br>
+      untuk menghadiri acara pernikahan kami.
+    </p>
+  </section>
+
+  <!-- ===== SECTION MEMPELAI ===== -->
+<section id="bride-groom">
+  <div class="content-wrapper">
     <!-- Judul Atas -->
     <h2 class="section-title">Bride and Groom</h2>
     <p class="section-subtitle">
@@ -449,69 +433,20 @@
 
     <!-- Foto di Bingkai -->
     <div class="photo-frame">
-      <img src="busro.jpg" alt="Bride">
+      <img src="foto-pengantin.jpg" alt="Bride">
     </div>
 
     <!-- Nama Mempelai -->
-    <h1 class="couple-name">Busro Ganteng</h1>
+    <h1 class="couple-name">Busro & Hana</h1>
 
     <!-- Kata2 dari mempelai -->
     <p class="couple-message">
       Dengan penuh rasa syukur dan bahagia, kami mengundang Bapak/Ibu/Saudara/i 
       untuk hadir dalam acara pernikahan kami.
     </p>
-    </div>
-  </section>
-    <section id="couple" class="reveal">
-    <div class="couple-slider reveal">
-    <!-- Foto di Bingkai -->
-    <div class="photo-frame">
-      <img src="hana.jpg" alt="Bride">
-    </div>
-
-    <!-- Nama Mempelai -->
-    <h1 class="couple-name">Hana Icikiwir</h1>
-
-    <!-- Kata2 dari mempelai -->
-    <p class="couple-message">
-      Dengan penuh rasa syukur dan bahagia, kami mengundang Bapak/Ibu/Saudara/i 
-      untuk hadir dalam acara pernikahan kami.
-    </p>
-    </div>
-  </section>
-<br><br><br><br><br><br><br><br>
-<!-- ===== SECTION UCAPAN & MAPS ===== -->
-<section id="ucapan-maps" class="reveal">
-  <!-- Judul -->
-  <h2 class="ucapan-maps-title">Ucapan & Doa</h2>
-  <p class="ucapan-maps-subtitle">
-    Dengan penuh rasa syukur, kami berharap doa restu dari Bapak/Ibu/Saudara/i 
-    sekalian untuk kebahagiaan pernikahan kami.
-  </p>
-
-  <!-- Form Ucapan -->
-  <div class="ucapan-maps-form">
-    <textarea id="ucapanText" rows="4" placeholder="Tulis ucapan terbaikmu..."></textarea>
-    <br>
-    <button class="ucapan-maps-btn" onclick="kirimUcapan()">Kirim via WhatsApp</button>
-  </div>
-
-  <!-- Maps -->
-  <div class="ucapan-maps-location">
-    <h3 class="ucapan-maps-location-title">Lokasi Acara</h3>
-    <iframe 
-      src="https://www.google.com/maps?q=-7.803249,110.364678&hl=es;z=14&output=embed" 
-      allowfullscreen 
-      loading="lazy">
-    </iframe>
-    <br>
-<button onclick="window.open('https://maps.app.goo.gl/d2vxbkdzUgZqUaMKA','_blank')" 
-        class="ucapan-maps-btn">
-  📍 Lihat di Google Maps
-</button>
   </div>
 </section>
-<br><br><br><br><br><br><br><br>
+
   <!-- Musik -->
   <audio id="bg-music" loop>
     <source src="videoplayback.m4a" type="audio/mpeg">
@@ -558,17 +493,16 @@
     }
   }, 2000);
 
-   /* === SECTION UCAPAN & MAPS === */
-  function kirimUcapan() {
-    let ucapan = document.getElementById("ucapanText").value.trim();
-    if (ucapan === "") {
-      alert("Tulis ucapan terlebih dahulu 😊");
-      return;
+  /* === SLIDER COUPLE === */
+  let coupleIndex = 0;
+  const coupleImages = document.querySelectorAll(".couple-slider img");
+  setInterval(() => {
+    if(coupleImages.length > 0){
+      coupleImages[coupleIndex].classList.remove("active");
+      coupleIndex = (coupleIndex + 1) % coupleImages.length;
+      coupleImages[coupleIndex].classList.add("active");
     }
-    let nomor = "6281354511045"; // nomor WA (pakai kode negara 62)
-    let url = "https://wa.me/" + nomor + "?text=" + encodeURIComponent(ucapan);
-    window.open(url, "_blank");
-  }
+  }, 3000);
 
   /* === COUNTDOWN === */
   const countdownEl = document.getElementById("countdown");
@@ -589,19 +523,11 @@
     `;
   }, 1000);
 
-/* === SAVE TO CALENDAR === */
-function saveToCalendar() {
-  const title = "Wedding Busro & Hana";
-  const start = "20251225T020000Z"; // 25 Des 2025, 09:00 WIB
-  const end   = "20251225T050000Z"; // 25 Des 2025, 12:00 WIB
-  const details = "Undangan pernikahan Busro & Hana";
-  const location = "https://maps.app.goo.gl/d2vxbkdzUgZqUaMKA"; // link Google Maps
-
-  const url = `https://calendar.google.com/calendar/r/eventedit?text=${encodeURIComponent(title)}&dates=${start}/${end}&details=${encodeURIComponent(details)}&location=${encodeURIComponent(location)}`;
-  
-  window.open(url, "_blank");
-}
-
+  /* === SAVE TO CALENDAR === */
+  function saveToCalendar() {
+    const url = "https://calendar.google.com/calendar/r/eventedit?text=Wedding+Busro+%26+Hana&dates=20251225T020000Z/20251225T050000Z&details=Undangan+pernikahan&location=Rumah+Busro";
+    window.open(url, "_blank");
+  }
 
   /* === REVEAL ANIMATION WITH INTERSECTION OBSERVER === */
   const reveals = document.querySelectorAll(".reveal");
