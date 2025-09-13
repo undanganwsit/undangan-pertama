@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Wedding Invitation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body, html {
+      height: 100%;
+      font-family: 'Playfair Display', serif;
+      overflow: hidden;
+    }
+
+    /* Background utama */
+    .background {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url("2149043964.jpg") no-repeat center center;
+      background-size: cover;
+      opacity: 0.6;
+      transform: translateY(100%);
+      animation: slideUp 2s ease forwards;
+    }
+
+    @keyframes slideUp {
+      to { transform: translateY(0); }
+    }
+
+    /* Overlay hitam */
+    .overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.25);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* Konten */
+    .content {
+      color: #fff;
+      animation: fadeIn 3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+.content h2 {
+  font-size: 24px;   /* Happy Wedding */
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+
+.content h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 60px;   /* Nama pengantin */
+  margin-bottom: 330px;
+  line-height: 1.2;
+}
+
+.content p {
+  font-size: 18px;   /* Teks undangan */
+  line-height: 1.6;
+  margin-bottom: 25px;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn {
+  background: #bfa57a;
+  color: white;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 30px;
+  font-size: 18px;   /* Button text */
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+    .btn:hover {
+      background: #9c865e;
+    }
+
+    /* Mobile 1080x1920 optimasi */
+    @media (max-width: 768px) {
+      .content h2 {
+        font-size: 1rem;
+      }
+      .content h1 {
+        font-size: 2.5rem;
+      }
+      .content p {
+        font-size: 0.9rem;
+      }
+      .btn {
+        font-size: 0.9rem;
+        padding: 12px 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Background -->
+  <div class="background"></div>
+
+  <!-- Overlay -->
+  <div class="overlay">
+    <div class="content">
+      <h2>Happy Wedding</h2>
+      <h1>Busro & Hana</h1>
+      <p>
+        Tanpa Mengurangi Rasa Hormat, Kami Mengundang Bapak/Ibu/Saudara/Saudari Pada Acara Pernikahan Kami
+      </p>
+      <button class="btn" onclick="openInvitation()">
+        📩 Buka Undangan
+      </button>
+    </div>
+  </div>
+
+  <!-- Musik -->
+  <audio id="bg-music" autoplay loop>
+    <source src="videoplayback.m4a" type="audio/mpeg">
+    Browser kamu tidak mendukung audio.
+  </audio>
+
+  <script>
+    function openInvitation() {
+      const music = document.getElementById("bg-music");
+      music.play();
+      alert("Undangan dibuka 🎉 (nanti bisa diarahkan ke halaman detail acara)");
+    }
+  </script>
+</body>
+</html>
