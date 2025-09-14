@@ -273,9 +273,9 @@
 
 /* ===== SECTION UCAPAN & MAPS ===== */
 #ucapan-maps {
-  background: #bfa57a;   /* ganti background */
-  color: #fff;           /* default teks jadi putih */
-  padding: 20px 15px;
+  background: #fff;
+  color: #333;
+  padding: 20px 15px; /* sama kaya wedding-intro */
   text-align: center;
 }
 
@@ -283,7 +283,7 @@
   font-family: 'Great Vibes', cursive;
   font-size: 36px;
   margin-bottom: 20px;
-  color: #fff; /* judul putih */
+  color: #bfa57a;
 }
 
 #ucapan-maps .ucapan-maps-subtitle {
@@ -292,26 +292,24 @@
   line-height: 1.8;
   max-width: 700px;
   margin: 0 auto 25px;
-  color: #f9f9f9; /* abu terang biar lembut */
+  color: #555;
 }
 
 /* Form Ucapan */
 #ucapan-maps .ucapan-maps-form textarea {
   width: 100%;
   max-width: 700px;
-  border: 1.5px solid #fff; /* outline putih */
+  border: 1.5px solid #bfa57a;
   border-radius: 8px;
   padding: 12px;
   font-size: 14px;
   font-family: 'Playfair Display', serif;
   resize: none;
   transition: border 0.3s;
-  background: #fff;     /* isi putih */
-  color: #333;          /* teks hitam */
 }
 
 #ucapan-maps .ucapan-maps-form textarea:focus {
-  border-color: #f0e6d2; /* fokus warna emas muda */
+  border-color: #8c7b52;
   outline: none;
 }
 
@@ -320,17 +318,16 @@
   padding: 10px 22px;
   border: none;
   border-radius: 6px;
-  background: #fff;    /* tombol putih */
-  color: #bfa57a;      /* teks emas */
+  background: #bfa57a;
+  color: #fff;
   font-size: 14px;
   font-family: 'Playfair Display', serif;
   cursor: pointer;
-  transition: background 0.3s, color 0.3s;
+  transition: background 0.3s;
 }
 
 #ucapan-maps .ucapan-maps-btn:hover {
-  background: #f0e6d2; /* hover jadi beige */
-  color: #333;
+  background: #a68e65;
 }
 
 /* Maps */
@@ -342,21 +339,20 @@
   font-family: 'Great Vibes', cursive;
   font-size: 30px;
   margin-bottom: 15px;
-  color: #fff; /* judul maps putih */
+  color: #bfa57a;
 }
 
 #ucapan-maps .ucapan-maps-location iframe {
   border-radius: 10px;
-  border: 2px solid #fff; /* bingkai putih */
+  border: 1.5px solid #bfa57a;
   max-width: 100%;
   height: 300px;
-  background: #fff;
 }
 
 #ucapan-maps .ucapan-maps-link {
   display: inline-block;
   margin-top: 12px;
-  color: #fff;
+  color: #bfa57a;
   font-weight: bold;
   font-family: 'Playfair Display', serif;
   text-decoration: none;
@@ -364,221 +360,7 @@
 }
 
 #ucapan-maps .ucapan-maps-link:hover {
-  color: #f0e6d2;
-}
-
-/* ===== SECTION ACARA ===== */
-#acara {
-  background: url("109721.jpg") no-repeat center center/cover;
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.acara-wrapper {
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-/* Card dengan frame setengah lingkaran */
-.acara-card {
-  background: #8c7b52;
-  margin: 30px 0;
-  padding: 30px 20px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-  position: relative;
-  overflow: hidden;
-
-  height: 300px;       /* <- ini tinggi frame */
-  display: flex;       
-  flex-direction: column;
-  justify-content: center; /* konten tetap di tengah */
-}
-
-/* Untuk Akad: atas melengkung */
-.acara-akad {
-  border-radius: 50% 50% 0 0 / 20% 20% 0 0; /* bikin oval di atas */
-}
-
-/* Untuk Resepsi: bawah melengkung */
-.acara-resepsi {
-  border-radius: 0 0 50% 50% / 0 0 20% 20%; /* bikin oval di bawah */
-}
-
-/* Title */
-.acara-title {
-  font-family: 'Great Vibes', cursive;
-  font-size: 28px;
-  color: #fff;
-  margin-bottom: 15px;
-}
-
-/* Tanggal */
-.acara-date {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #fff;
-}
-
-/* Detail */
-.acara-detail {
-  font-size: 14px;
-  line-height: 1.6;
-  color: #fff;
-}
-
-/* ===== SECTION GALERY ===== */
-.gallery-section {
-  text-align: center;
-  padding: 50px 20px;
-  background: #fff;
-}
-
-.gallery-title {
-  font-family: 'Great Vibes', cursive;
-  font-size: 2.5rem;
-  color: #7b6a58;
-  margin-bottom: 30px;
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 15px;
-}
-
-.gallery-grid img {
-  width: 100%;
-  height: 280px;
-  object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
-
-.gallery-grid img:hover {
-  transform: scale(1.05);
-}
-
-/* ===== SECTION HADIAH ===== */
-#hadiah {
-  background: #bfa57a;
-  padding: 50px 20px;
-  text-align: center;
-}
-
-.hadiah-title {
-  font-family: 'Great Vibes', cursive;
-  font-size: 36px;
-  color: #fff;
-  margin-bottom: 15px;
-}
-
-.hadiah-subtitle {
-  font-family: 'Playfair Display', serif;
-  font-size: 14px;
-  line-height: 1.8;
-  color: #fff;
-  max-width: 700px;
-  margin: 0 auto 30px;
-}
-
-.hadiah-card {
-  background: #fff;
-  border-radius: 15px;
-  padding: 15px 20px;
-  margin: 15px auto;
-  max-width: 420px;
-  text-align: left;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-}
-
-.hadiah-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.hadiah-logo {
-  width: 50px;
-  height: auto;
-  margin-right: 15px;
-}
-
-.hadiah-number {
-  flex: 1;
-  font-weight: bold;
-  font-size: 18px;
-  color: #333;
-}
-
-.copy-btn {
-  margin-left: 15px; /* kasih jarak */
-  padding: 6px 14px;
-  border: none;
-  border-radius: 8px;
-  background: #bfa57a;
-  color: #fff;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.copy-btn:hover {
-  background: #9c865e;
-}
-
-.hadiah-bottom {
-  margin-top: 10px;
-  font-size: 14px;
-  color: #555;
-  font-family: 'Playfair Display', serif;
-}
-
-/* ===== FOOTER ===== */
-#footer {
-  background: #bfa57a;   /* warna footer */
-  padding: 20px 30px;
-  font-family: 'Poppins', sans-serif;
-  color: #fff;           /* teks putih */
-}
-
-.footer-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1100px;
-  margin: 0 auto;
-  flex-wrap: wrap; /* biar responsif di HP */
-}
-
-.footer-left {
-  flex: 1;
-}
-
-.footer-logo {
-  width: 80px;
-  height: auto;
-}
-
-.footer-right {
-  flex: 2;
-  text-align: right;
-}
-
-.footer-right p {
-  margin: 5px 0;
-  font-size: 14px;
-}
-
-.footer-right a {
-  color: #fff;             /* link putih */
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.footer-right a:hover {
-  text-decoration: underline; /* efek hover */
+  color: #8c7b52;
 }
 
 
@@ -622,8 +404,6 @@
   <button onclick="document.getElementById('hero').scrollIntoView({behavior:'smooth'})">🏠</button>
   <button onclick="document.getElementById('wedding-intro').scrollIntoView({behavior:'smooth'})">💌</button>
   <button onclick="document.getElementById('couple').scrollIntoView({behavior:'smooth'})">👩‍❤️‍👨</button>
-  <button onclick="document.getElementById('acara').scrollIntoView({behavior:'smooth'})">📅</button>
-  <button onclick="document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">🖼️</button>
   <button onclick="document.getElementById('ucapan-maps').scrollIntoView({behavior:'smooth'})">📍</button>
   <button id="music-btn" onclick="toggleMusic()">🎵</button>
 </div>
@@ -700,81 +480,6 @@
     </div>
   </section>
 <br>
-<!-- ===== SECTION ACARA ===== -->
-<section id="acara" class="reveal">
-  <div class="acara-wrapper">
-
-    <!-- Akad Nikah -->
-    <div class="acara-card acara-akad reveal">
-      <h2 class="acara-title">Akad Nikah</h2>
-      <div class="acara-date">Sabtu, 25 Januari 2025</div>
-      <p class="acara-detail">
-        Pukul 08:00 WIB - Selesai <br>
-        Bertempat di Kediaman Mempelai Wanita <br>
-        RT.02 RW.02 Ds. Sekaran Loceret Nganjuk
-      </p>
-    </div>
-
-    <!-- Resepsi Pernikahan -->
-    <div class="acara-card acara-resepsi reveal">
-      <h2 class="acara-title">Resepsi Pernikahan</h2>
-      <div class="acara-date">Sabtu, 25 Januari 2025</div>
-      <p class="acara-detail">
-        Pukul 10:00 WIB - Selesai <br>
-        Bertempat di Kediaman Mempelai Wanita <br>
-        RT.02 RW.02 Ds. Sekaran Loceret Nganjuk
-      </p>
-    </div>
-
-  </div>
-</section>
-<br>
-<!-- ===== SECTION GALERY ===== -->
-<section id="gallery" class="gallery-section" class="reveal"> 
-  <h2 class="gallery-title">Our Gallery</h2>
-  <div class="gallery-grid">
-    <img src="2149043964.jpg" alt="Gallery 1">
-    <img src="2149043966.jpg" alt="Gallery 2">
-    <img src="2149043955.jpg" alt="Gallery 3">
-    <img src="2149043966.jpg" alt="Gallery 4">
-    <img src="2149043964.jpg" alt="Gallery 5">
-    <img src="2149043955.jpg" alt="Gallery 6">
-    <img src="2149043955.jpg" alt="Gallery 7">
-    <img src="2149043966.jpg" alt="Gallery 8">
-    <img src="2149043964.jpg" alt="Gallery 9">
-  </div>
-</section>
-<br>
-<!-- ===== SECTION HADIAH ===== -->
-<section id="hadiah" class="reveal">
-  <h2 class="hadiah-title">Titip Hadiah</h2>
-  <p class="hadiah-subtitle">
-    Doa restu Bapak/Ibu sekalian merupakan karunia yang sangat berarti bagi kami. 
-    Dan jika memberi merupakan ungkapan tanda kasih, Bapak/Ibu dapat memberi kado secara cashless. 
-    Terima kasih ❤️
-  </p>
-
-  <!-- BCA -->
-  <div class="hadiah-card">
-    <div class="hadiah-top">
-      <img src="bca.png" alt="BCA" class="hadiah-logo">
-      <span class="hadiah-number">2251176291</span>
-      <button class="copy-btn" onclick="copyText('2251176291')">Copy</button>
-    </div>
-    <div class="hadiah-bottom">FIBRYANTIKA VACHRENISA</div>
-  </div>
-
-  <!-- SeaBank -->
-  <div class="hadiah-card">
-    <div class="hadiah-top">
-      <img src="mandiri.png" alt="SeaBank" class="hadiah-logo">
-      <span class="hadiah-number">901054929605</span>
-      <button class="copy-btn" onclick="copyText('901054929605')">Copy</button>
-    </div>
-    <div class="hadiah-bottom">FIBRYANTIKA VACHRENISA</div>
-  </div>
-</section>
-
 <!-- ===== SECTION UCAPAN & MAPS ===== -->
 <section id="ucapan-maps" class="reveal">
   <!-- Judul -->
@@ -806,24 +511,7 @@
 </button>
   </div>
 </section>
-
-<!-- ===== FOOTER ===== -->
-<footer id="footer">
-  <div class="footer-container">
-    <!-- Logo -->
-    <div class="footer-left">
-      <img src="wsit.png" alt="Logo" class="footer-logo">
-    </div>
-
-    <!-- Kontak -->
-    <div class="footer-right">
-      <p>📱 WA : <a href="https://wa.me/6282338804175" target="_blank">082338804175</a></p>
-      <p>✉️ Email : <a href="mailto:huja@gmail.com">huja@gmail.com</a></p>
-      <p>🎵 TikTok : <a href="https://www.tiktok.com/@skuy" target="_blank">@skuy</a></p>
-    </div>
-  </div>
-</footer>
-
+<br><br><br><br><br><br><br><br>
   <!-- Musik -->
   <audio id="bg-music" loop>
     <source src="bergemasampaiselamanya.m4a" type="audio/mpeg">
@@ -900,13 +588,6 @@
       <div>${seconds}<br>Second</div>
     `;
   }, 1000);
-
-/* === COPY TO CLIPBOARD === */
-function copyText(text) {
-  navigator.clipboard.writeText(text).then(() => {
-    alert("Nomor rekening berhasil disalin: " + text);
-  });
-}
 
 /* === SAVE TO CALENDAR === */
 function saveToCalendar() {
