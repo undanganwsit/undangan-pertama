@@ -426,6 +426,17 @@
   line-height: 1.6;
   color: #fff;
 }
+/* Buat semua section default tetap 100vh */
+section {
+  height: 100vh;
+}
+
+/* Khusus gallery jangan dipaksa 100vh */
+#gallery {
+  height: auto;       /* biar menyesuaikan isi */
+  min-height: 100vh;  /* opsional: tetap minimal 1 layar */
+  padding: 60px 20px; /* kasih ruang biar lega */
+}
 
 /* ===== SECTION GALERY ===== */
 .gallery-section {
@@ -733,25 +744,10 @@
   <div class="gallery-grid">
     <img src="2149043964.jpg" alt="Gallery 1">
     <img src="2149043966.jpg" alt="Gallery 2">
-  </div>
-</section>
-<section id="gallery" class="gallery-section" class="reveal"> 
-  <h2 class="gallery-title">Our Gallery</h2>
-  <div class="gallery-grid">
     <img src="2149043955.jpg" alt="Gallery 3">
     <img src="2149043966.jpg" alt="Gallery 4">
-  </div>
-</section>
-<section id="gallery" class="gallery-section" class="reveal"> 
-  <h2 class="gallery-title">Our Gallery</h2>
-  <div class="gallery-grid">
     <img src="2149043964.jpg" alt="Gallery 5">
     <img src="2149043955.jpg" alt="Gallery 6">
-  </div>
-</section>
-<section id="gallery" class="gallery-section" class="reveal"> 
-  <h2 class="gallery-title">Our Gallery</h2>
-  <div class="gallery-grid">
     <img src="2149043955.jpg" alt="Gallery 7">
     <img src="2149043966.jpg" alt="Gallery 8">
   </div>
@@ -818,7 +814,11 @@
 </button>
   </div>
 </section>
-
+<!-- ===== FOOTER ===== -->
+<footer id="footer">
+  <div class="footer-container">
+  </div>
+</footer>
 <!-- ===== FOOTER ===== -->
 <footer id="footer">
   <div class="footer-container">
@@ -833,6 +833,11 @@
       <p>✉️ Email : <a href="mailto:huja@gmail.com">huja@gmail.com</a></p>
       <p>🎵 TikTok : <a href="https://www.tiktok.com/@skuy" target="_blank">@skuy</a></p>
     </div>
+  </div>
+</footer>
+<!-- ===== FOOTER ===== -->
+<footer id="footer">
+  <div class="footer-container">
   </div>
 </footer>
 
