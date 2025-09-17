@@ -185,6 +185,68 @@
       .content p { font-size: 0.9rem; }
       .btn { font-size: 0.9rem; padding: 12px 28px; }
     }
+    /* FULLSCREEN OPENING */
+#opening {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #f8f5f0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 9999;
+  overflow: hidden;
+    display: none; /* sembunyikan dulu */
+  opacity: 0;
+}
+
+/* ANIMASI DAUN */
+.leaves span {
+  position: absolute;
+  top: -10%;
+  font-size: 2rem;
+  animation: fall linear infinite;
+  opacity: 0.8;
+}
+.leaves span:nth-child(1) { left: 20%; animation-duration: 6s; }
+.leaves span:nth-child(2) { left: 50%; animation-duration: 8s; }
+.leaves span:nth-child(3) { left: 75%; animation-duration: 10s; }
+
+@keyframes fall {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+}
+
+/* FRAME NAMA */
+.frame-nama {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  text-align: center;
+  opacity: 0;
+  transform: scale(0.8);
+  animation: fadeIn 2s ease forwards 5s; /* muncul setelah 2 detik */
+}
+.frame-nama h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  color: #7b5e3d;
+}
+.frame-nama p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
   </style>
 </head>
 <body>
@@ -201,6 +263,19 @@
       </div>
     </div>
   </div>
+
+<!-- ===== OPENING INTRO ===== -->
+<div id="opening">
+  <div class="leaves">
+    <span>🍃</span>
+    <span>🍂</span>
+    <span>🍁</span>
+  </div>
+  <div class="frame-nama">
+    <h1>Busro & Pasangan</h1>
+    <p>Wedding Invitation</p>
+  </div>
+</div>
 
   <!-- ===== HALAMAN UTAMA ===== -->
   <section id="hero">
@@ -240,7 +315,34 @@
   </audio>
 
   <script>
-        /* === FUNGSI MUSIK === */
+/* === FUNGSI BUKA UNDANGAN === */
+  function openInvitation() {
+    // Sembunyikan cover
+    document.getElementById("cover").style.display = "none";
+
+    // Tampilkan opening
+    const opening = document.getElementById("opening");
+    opening.style.display = "flex";
+    opening.style.opacity = "1";
+
+    // Jalankan animasi & setelah selesai, hilangkan opening
+    setTimeout(() => {
+      opening.style.opacity = "0";
+      setTimeout(() => {
+        opening.style.display = "none";
+
+        // Setelah opening hilang → tampilkan hero & couple
+        document.getElementById("hero").style.display = "flex";
+        document.getElementById("couple").style.display = "flex";
+
+        // Musik mulai otomatis
+        const music = document.getElementById("bg-music");
+        music.play();
+      }, 1000); // delay fadeout 1 detik
+    }, 5000); // opening tampil 5 detik
+  }
+
+  /* === FUNGSI MUSIK === */
   const music = document.getElementById("bg-music");
   const musicBtn = document.getElementById("music-btn");
   let isPlaying = true;
@@ -248,63 +350,54 @@
   function toggleMusic() {
     if (isPlaying) {
       music.pause();
-      musicBtn.innerHTML = "⏸️"; // ikon pause
+      musicBtn.innerHTML = "⏸️";
     } else {
       music.play();
-      musicBtn.innerHTML = "🎵"; // ikon play
+      musicBtn.innerHTML = "🎵";
     }
     isPlaying = !isPlaying;
   }
-  
-    /* === FUNGSI BUKA UNDANGAN === */
-    function openInvitation() {
-      document.getElementById("cover").style.display = "none";
-      document.getElementById("hero").style.display = "flex";
-      document.getElementById("couple").style.display = "flex";
-      const music = document.getElementById("bg-music");
-      music.play();
+
+  /* === SLIDER HERO === */
+  let heroIndex = 0;
+  const heroImages = document.querySelectorAll(".hero-slider img");
+  setInterval(() => {
+    if(heroImages.length > 0){
+      heroImages[heroIndex].classList.remove("active");
+      heroIndex = (heroIndex + 1) % heroImages.length;
+      heroImages[heroIndex].classList.add("active");
     }
+  }, 2000);
 
-    /* === SLIDER HERO === */
-    let heroIndex = 0;
-    const heroImages = document.querySelectorAll(".hero-slider img");
-    setInterval(() => {
-      if(heroImages.length > 0){
-        heroImages[heroIndex].classList.remove("active");
-        heroIndex = (heroIndex + 1) % heroImages.length;
-        heroImages[heroIndex].classList.add("active");
-      }
-    }, 2000);
+  /* === SLIDER COUPLE === */
+  let coupleIndex = 0;
+  const coupleImages = document.querySelectorAll(".couple-slider img");
+  setInterval(() => {
+    if(coupleImages.length > 0){
+      coupleImages[coupleIndex].classList.remove("active");
+      coupleIndex = (coupleIndex + 1) % coupleImages.length;
+      coupleImages[coupleIndex].classList.add("active");
+    }
+  }, 3000);
 
-    /* === SLIDER COUPLE === */
-    let coupleIndex = 0;
-    const coupleImages = document.querySelectorAll(".couple-slider img");
-    setInterval(() => {
-      if(coupleImages.length > 0){
-        coupleImages[coupleIndex].classList.remove("active");
-        coupleIndex = (coupleIndex + 1) % coupleImages.length;
-        coupleImages[coupleIndex].classList.add("active");
-      }
-    }, 3000);
-
-    /* === COUNTDOWN === */
-    const countdownEl = document.getElementById("countdown");
-    const weddingDate = new Date("2025-12-25 09:00:00").getTime(); // ubah tanggal acara
-    setInterval(() => {
-      const now = new Date().getTime();
-      const distance = weddingDate - now;
-      if (distance < 0) { countdownEl.innerHTML = "Acara sudah berlangsung"; return; }
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-      countdownEl.innerHTML = `
-        <div>${days}<br>Day</div>
-        <div>${hours}<br>Hour</div>
-        <div>${minutes}<br>Minute</div>
-        <div>${seconds}<br>Second</div>
-      `;
-    }, 1000);
+  /* === COUNTDOWN === */
+  const countdownEl = document.getElementById("countdown");
+  const weddingDate = new Date("2025-12-25 09:00:00").getTime();
+  setInterval(() => {
+    const now = new Date().getTime();
+    const distance = weddingDate - now;
+    if (distance < 0) { countdownEl.innerHTML = "Acara sudah berlangsung"; return; }
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    countdownEl.innerHTML = `
+      <div>${days}<br>Day</div>
+      <div>${hours}<br>Hour</div>
+      <div>${minutes}<br>Minute</div>
+      <div>${seconds}<br>Second</div>
+    `;
+  }, 1000);
 
     /* === SAVE TO CALENDAR === */
     function saveToCalendar() {

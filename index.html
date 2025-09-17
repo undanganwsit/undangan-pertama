@@ -73,6 +73,84 @@
       gap: 8px;
     }
     .btn:hover { background: #9c865e; }
+/* ===== OPENING STYLE ===== */
+#opening {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  z-index: 2;
+  background: transparent; /* ini penting */
+}
+
+.rotating-frame {
+  width: 80vw;  /* 60% dari lebar layar */
+  max-width: 450px;
+  height: auto;
+  animation: rotateFrame 20s linear infinite;
+}
+
+/* Nama pengantin */
+.bride-groom {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #bfa57a;
+  z-index: 2;
+}
+
+.bride-groom .name {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3rem;
+  animation: fadeInZoom 3s ease forwards;
+}
+
+.bride-groom .and {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin: 5px 0;
+  color: #555;
+}
+
+/* Animasi */
+@keyframes spin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes fadeInZoom {
+  0% { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes rotateFrame {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
 
     /* === HALAMAN UTAMA === */
     section { 
@@ -190,7 +268,6 @@
       background: #bfa57a;
     }
 
-/* ===== SECTION UCAPAN ===== */
 /* ===== SECTION UCAPAN ===== */
 #wedding-intro {
   background: #fff;
@@ -641,6 +718,22 @@ section {
   <button id="music-btn" onclick="toggleMusic()">🎵</button>
 </div>
 
+<!-- ===== OPENING ===== -->
+<div id="opening">
+<video autoplay muted playsinline id="bg-video">
+  <source src="bg.mp4" type="video/mp4">
+</video>
+
+
+  <div class="overlay reveal">
+    <img src="frame.png" alt="Frame" class="rotating-frame">
+    <div class="bride-groom">
+      <div class="name">Busyro</div>
+      <div class="and">dan</div>
+      <div class="name">Hana</div>
+    </div>
+  </div>
+</div>
 
   <!-- ===== HALAMAN UTAMA ===== -->
   <section id="hero" class="reveal">
@@ -787,7 +880,8 @@ section {
 </section>
 
 <!-- ===== SECTION UCAPAN & MAPS ===== -->
-<section id="ucapan-maps" class="reveal">
+<section id="ucapan-maps" >
+  <div class="reveal">
   <!-- Judul -->
   <h2 class="ucapan-maps-title">Ucapan & Doa</h2>
   <p class="ucapan-maps-subtitle">
@@ -815,6 +909,7 @@ section {
         class="ucapan-maps-btn">
   📍 Lihat di Google Maps
 </button>
+  </div>
   </div>
   <br><br><br><br><br><br><br><br><br>
 </section>
