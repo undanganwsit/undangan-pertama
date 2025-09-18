@@ -122,38 +122,29 @@
   z-index: 2;
 }
 
-.text-wrapper {
-  position: absolute;
-  top: 50%;                 /* pusat vertikal */
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  z-index: 3;
-  display: flex;
-  flex-direction: column;   /* urut atas-bawah */
-  align-items: center;
-}
-
-.wedding-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 14px;
-  letter-spacing: 2px;
-  color: #555;
-  margin-bottom: 10px;      /* jarak ke nama Arin */
-}
-
-.name {
+.bride-groom .name {
   font-family: 'Great Vibes', cursive;
   font-size: 3rem;
-  color: #85a57a;           /* warna hijau lembut */
+  animation: fadeInZoom 3s ease forwards;
 }
 
-.and {
+.bride-groom .and {
   font-family: 'Playfair Display', serif;
   font-size: 16px;
   text-transform: uppercase;
   margin: 5px 0;
   color: #555;
+}
+
+.wedding-title {
+  position: absolute;
+  top: 20%;               /* atur seberapa tinggi di atas frame */
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  color: #555;
+  z-index: 3;             /* biar di atas frame */
 }
 
 /* Animasi */
@@ -646,16 +637,14 @@ section {
 
 
 <div class="overlay reveal"> 
+  <h2 class="wedding-title">The Wedding Of</h2> 
   <img src="frame.png" alt="Frame" class="rotating-frame"> 
-
-  <div class="text-wrapper">
-    <h2 class="wedding-title">The Wedding Of</h2> 
+  <div class="bride-groom"> 
     <div class="name">Arin</div> 
     <div class="and">dan</div> 
     <div class="name">Yusuf</div> 
-  </div>
-</div>
-
+  </div> 
+</div> </div>
 
     <!-- ===== SECTION UCAPAN ===== -->
   <section id="wedding-intro" class="reveal">
