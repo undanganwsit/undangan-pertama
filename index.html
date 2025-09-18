@@ -368,30 +368,32 @@ section {
   height: 100vh;
 }
 
-/* ===== SECTION HADIAH & UCAPAN ===== */
-#hadiah-ucapan {
+/* ===== SECTION HADIAH ===== */
+#hadiah {
   position: relative;
   background: #b1d4aa;
-  padding: 180px 80px;  /* lebih tinggi */
+  padding: 50px 20px;
   text-align: center;
   overflow: hidden;
+  isolation: isolate;   /* ⬅️ penting: batasi pseudo hanya di dalam */
+  z-index: 1;           /* pastikan hadiah di atas background lain */
 }
 
-#hadiah-ucapan::before {
+#hadiah::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: url("texture2.png") center/cover no-repeat;
-  opacity: 0.2;
-  z-index: 0;
+  background: url("texture4.png") center/cover no-repeat;
+  opacity: 1;
+  z-index: -1;          /* ⬅️ taruh di belakang isi hadiah */
 }
 
-#hadiah-ucapan * {
+#hadiah * {
   position: relative;
-  z-index: 1;
+  z-index: 1; /* pastikan isi tetap di atas tekstur */
 }
 
-/* ===== Judul Hadiah ===== */
+
 .hadiah-title {
   font-family: 'Great Vibes', cursive;
   font-size: 36px;
@@ -405,15 +407,14 @@ section {
   line-height: 1.8;
   color: #fff;
   max-width: 700px;
-  margin: 0 auto 40px;
+  margin: 0 auto 30px;
 }
 
-/* ===== Card Hadiah ===== */
 .hadiah-card {
   background: #fff;
   border-radius: 15px;
   padding: 15px 20px;
-  margin: 20px auto;
+  margin: 15px auto;
   max-width: 420px;
   text-align: left;
   box-shadow: 0 6px 15px rgba(0,0,0,0.08);
@@ -439,11 +440,11 @@ section {
 }
 
 .copy-btn {
-  margin-left: 15px;
+  margin-left: 15px; /* kasih jarak */
   padding: 6px 14px;
   border: none;
   border-radius: 8px;
-  background: #b1d4aa;
+  background: #b1d4aa; 
   color: #fff;
   font-size: 14px;
   cursor: pointer;
@@ -461,79 +462,117 @@ section {
   font-family: 'Playfair Display', serif;
 }
 
-/* ===== Judul Ucapan ===== */
-.ucapan-maps-title {
-  font-family: 'Great Vibes', cursive;
-  font-size: 36px;
-  margin: 60px 0 20px;
-  color: #fff;
+/* ===== SECTION UCAPAN & MAPS ===== */
+#ucapan-maps {
+  position: relative;
+  background: #b1d4aa;
+  padding: 50px 20px;
+  text-align: center;
+  overflow: hidden;
+  isolation: isolate;   /* ⬅️ biar pseudo ::before hadiah nggak numpuk */
+  z-index: 2;           /* ⬅️ pastikan section ini di atas */
 }
 
-.ucapan-maps-subtitle {
+#ucapan-maps::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("texture5.png") center/cover no-repeat;
+  opacity: 1;
+  z-index: -1;          /* ⬅️ taruh di belakang isi ucapan */
+}
+
+#ucapan-maps * {
+  position: relative;
+  z-index: 1;            /* pastikan semua isi di atas background */
+}
+
+#ucapan-maps .ucapan-maps-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #fff; /* judul putih */
+}
+
+#ucapan-maps .ucapan-maps-subtitle {
   font-family: 'Playfair Display', serif;
   font-size: 14px;
   line-height: 1.8;
   max-width: 700px;
   margin: 0 auto 25px;
-  color: #f9f9f9;
+  color: #f9f9f9; /* abu terang biar lembut */
 }
 
-/* ===== Form Ucapan ===== */
-.ucapan-maps-form textarea {
+/* Form Ucapan */
+#ucapan-maps .ucapan-maps-form textarea {
   width: 100%;
   max-width: 700px;
-  border: 1.5px solid #fff;
+  border: 1.5px solid #fff; /* outline putih */
   border-radius: 8px;
   padding: 12px;
   font-size: 14px;
   font-family: 'Playfair Display', serif;
   resize: none;
-  background: #fff;
-  color: #333;
   transition: border 0.3s;
+  background: #fff;     /* isi putih */
+  color: #333;          /* teks hitam */
 }
 
-.ucapan-maps-form textarea:focus {
-  border-color: #9cc095;
+#ucapan-maps .ucapan-maps-form textarea:focus {
+  border-color: #9cc095; /* fokus warna emas muda */
   outline: none;
 }
 
-.ucapan-maps-btn {
+#ucapan-maps .ucapan-maps-btn {
   margin-top: 15px;
   padding: 10px 22px;
   border: none;
   border-radius: 6px;
-  background: #fff;
-  color: #b1d4aa;
+  background: #fff;    /* tombol putih */
+  color: #b1d4aa;      /* teks emas */
   font-size: 14px;
   font-family: 'Playfair Display', serif;
   cursor: pointer;
   transition: background 0.3s, color 0.3s;
 }
 
-.ucapan-maps-btn:hover {
-  background: #9cc095;
+#ucapan-maps .ucapan-maps-btn:hover {
+  background: #9cc095; /* hover jadi beige */
   color: #fff;
 }
 
-/* ===== Maps ===== */
-.ucapan-maps-location {
-  margin-top: 40px;
+/* Maps */
+#ucapan-maps .ucapan-maps-location {
+  margin-top: 35px;
 }
 
-.ucapan-maps-location-title {
+#ucapan-maps .ucapan-maps-location-title {
   font-family: 'Great Vibes', cursive;
   font-size: 30px;
   margin-bottom: 15px;
-  color: #fff;
+  color: #fff; /* judul maps putih */
 }
 
-.ucapan-maps-location iframe {
+#ucapan-maps .ucapan-maps-location iframe {
   border-radius: 10px;
-  border: 2px solid #fff;
+  border: 2px solid #fff; /* bingkai putih */
   max-width: 100%;
   height: 300px;
   background: #fff;
+}
+
+#ucapan-maps .ucapan-maps-link {
+  display: inline-block;
+  margin-top: 12px;
+  color: #fff;
+  font-weight: bold;
+  font-family: 'Playfair Display', serif;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+#ucapan-maps .ucapan-maps-link:hover {
+  color: #9cc095;
 }
 
 /* ===== FOOTER ===== */
@@ -690,10 +729,8 @@ section {
   </div>
 </section>
 
-<!-- ===== SECTION HADIAH & UCAPAN ===== -->
-<section id="hadiah-ucapan" class="reveal">
-
-  <!-- Bagian Hadiah -->
+<!-- ===== SECTION HADIAH ===== -->
+<section id="hadiah" class="reveal">
   <h2 class="hadiah-title">Titip Hadiah</h2>
   <p class="hadiah-subtitle">
     Doa restu Bapak/Ibu sekalian merupakan karunia yang sangat berarti bagi kami. 
@@ -711,17 +748,21 @@ section {
     <div class="hadiah-bottom">Yusuf Arin</div>
   </div>
 
-  <!-- Mandiri -->
+  <!-- SeaBank -->
   <div class="hadiah-card">
     <div class="hadiah-top">
-      <img src="mandiri.png" alt="Mandiri" class="hadiah-logo">
+      <img src="mandiri.png" alt="SeaBank" class="hadiah-logo">
       <span class="hadiah-number">00112233445577</span>
       <button class="copy-btn" onclick="copyText('00112233445577')">Copy</button>
     </div>
     <div class="hadiah-bottom">Yusuf Arin</div>
   </div>
+</section>
 
-  <!-- Bagian Ucapan -->
+<!-- ===== SECTION UCAPAN & MAPS ===== -->
+<section id="ucapan-maps" >
+  <div class="reveal">
+  <!-- Judul -->
   <h2 class="ucapan-maps-title">Ucapan & Doa</h2>
   <p class="ucapan-maps-subtitle">
     Dengan penuh rasa syukur, kami berharap doa restu dari Bapak/Ibu/Saudara/i 
@@ -744,13 +785,14 @@ section {
       loading="lazy">
     </iframe>
     <br>
-    <button onclick="window.open('https://maps.app.goo.gl/d2vxbkdzUgZqUaMKA','_blank')" 
-            class="ucapan-maps-btn">
-      📍 Lihat di Google Maps
-    </button>
+<button onclick="window.open('https://maps.app.goo.gl/d2vxbkdzUgZqUaMKA','_blank')" 
+        class="ucapan-maps-btn">
+  📍 Lihat di Google Maps
+</button>
   </div>
+  </div>
+  <br><br><br><br><br><br><br><br><br>
 </section>
-
 <!-- ===== FOOTER ===== -->
 <footer id="footer">
   <div class="footer-container">
