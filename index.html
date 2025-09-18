@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Wedding Invitation</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -619,6 +620,68 @@ section {
   background: #fff;
 }
 
+/* ===== SECTION LOVE STORY ===== */
+#love-story {
+  position: relative;
+  background: url("10190.jpg") no-repeat center center/cover;
+  background-color: rgba(255,255,255,0.5); /* putih transparan di atas bg */
+  background-blend-mode: overlay; /* bisa coba lighten, multiply, soft-light */
+  padding: 60px 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+
+/* Frame setengah lingkaran atas */
+.love-story-frame {
+  background: #b1d4aa;
+  margin: 30px 0;
+  padding: 30px 20px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  position: relative;
+  overflow: hidden;
+
+  height: 750px; /* sedikit lebih tinggi biar muat teks */
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  border-radius: 50% 50% 0 0 / 40% 40% 0 0; /* lengkung atas */
+}
+
+/* Title */
+.love-story-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 32px;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+/* Isi cerita */
+.love-story-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #fff;
+  padding: 0 10px;
+}
+
+.love-story-bottom {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: -100px; /* dorong gambar ke bawah */
+  position: relative;
+}
+
+.love-story-bottom img {
+  display: block;
+  margin: 0 auto;
+  max-width: 550px;
+  transform: translateY(20px); /* geser ke bawah */
+}
 
 /* ===== FOOTER ===== */
 #footer {
@@ -642,7 +705,7 @@ section {
 }
 
 .footer-logo {
-  width: 180px;
+  width: 140px;
   height: auto;
 }
 
@@ -665,7 +728,6 @@ section {
 .footer-right a:hover {
   text-decoration: underline; /* efek hover */
 }
-
 
     /* === REVEAL ANIMATION === */
     .reveal {
@@ -813,17 +875,17 @@ section {
       </div>
       <div class="hadiah-bottom">Yusuf Arin</div>
     </div>
-  </div>
-  <!-- Kado Fisik -->
+
+<!-- Kado Fisik -->
 <div class="hadiah-card reveal">
   <div class="hadiah-top">
     <img src="gift.png" alt="Kado Fisik" class="hadiah-logo">
-    <span class="hadiah-number">Kirim Kado</span>
+    <span class="hadiah-number" id="alamat-kado">Kirim Kado</span>
+    <button class="copy-btn" onclick="copyText('Kradenan Gg 8, Pekalongan Selatan')">Copy</button>
   </div>
-  <div class="hadiah-bottom">
-    Kradenan Gg 8, Pekalongan Selatan
-  </div>
+  <div class="hadiah-bottom">Kradenan Gg 8, Pekalongan Selatan</div>
 </div>
+
 <br><br><br>
   <!-- Bagian Ucapan & Maps -->
   <div class="ucapan-wrapper">
@@ -857,8 +919,33 @@ section {
   </div>
 </section>
 
+<!-- ===== SECTION LOVE STORY ===== -->
+<section id="love-story" class="reveal">
+      <div class="flower-fall">
+    <!-- bikin banyak bunga -->
+     <span><img src="bunga1.png"></span>
+     <span><img src="bunga2.png"></span>
+     <span><img src="bunga3.png"></span>
+     <span><img src="bunga1.png"></span>
+     <span><img src="bunga2.png"></span>
+     <span><img src="bunga3.png"></span>
+  </div>
+  <div class="love-story-frame reveal">
+    <h2 class="love-story-title reveal">Love Story</h2>
+    <p class="love-story-text reveal">
+      Pertemuan pertama kami terjadi di kampus, saat itu hanya sebatas teman biasa. 
+      Namun seiring berjalannya waktu, komunikasi dan kebersamaan membuat kami semakin dekat. 
+      Dari situlah cerita indah ini bermula, hingga akhirnya kami memutuskan untuk melangkah ke jenjang pernikahan.
+    </p>
+  </div>
+  <div class="love-story-bottom">
+   <img src="bunga.png" alt="bunga hiasan">
+</div>
+</section>
+
 <!-- ===== FOOTER ===== -->
 <footer id="footer">
+  <br>
   <div class="footer-container">
     <!-- Logo -->
     <div class="footer-left">
@@ -867,9 +954,15 @@ section {
 
     <!-- Kontak -->
     <div class="footer-right">
-      <p>📱 WA : <a href="https://wa.me/6282338804175" target="_blank">082338804175</a></p>
-      <p>✉️ Email : <a href="mailto:huja@gmail.com">huja@gmail.com</a></p>
-      <p>🎵 TikTok : <a href="https://www.tiktok.com/@skuy" target="_blank">@skuy</a></p>
+      <p><i class="fab fa-whatsapp"></i> 
+        WA : <a href="https://wa.me/6282338804175" target="_blank">082338804175</a>
+      </p>
+      <p><i class="fas fa-envelope"></i> 
+        Email : <a href="mailto:wsitofficial@gmail.com">wsitofficial@gmail.com</a>
+      </p>
+      <p><i class="fab fa-tiktok"></i> 
+        TikTok : <a href="https://www.tiktok.com/@skuy" target="_blank">@wsitofficial</a>
+      </p>
     </div>
   </div>
   <br><br><br>
