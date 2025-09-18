@@ -13,10 +13,6 @@
       overflow-x: hidden;
       scroll-behavior: smooth;
     }
-    html {
-  scroll-behavior: smooth;
-}
-
 
     /* === HALAMAN AWAL (COVER) === */
     #cover {
@@ -690,9 +686,9 @@ section {
 
 <!-- ===== NAVIGASI + MUSIK ===== -->
 <div class="nav">
-  <a href="#wedding-intro"><button>🏠</button></a>
-  <a href="#acara"><button>📅</button></a>
-  <a href="#hadiah-ucapan"><button>💌</button></a>
+  <button onclick="document.getElementById('wedding-intro').scrollIntoView({behavior:'smooth'})">🏠</button>
+  <button onclick="document.getElementById('acara').scrollIntoView({behavior:'smooth'})">📅</button>
+  <button onclick="document.getElementById('hadiah-ucapan').scrollIntoView({behavior:'smooth'})">💌</button>
   <button id="music-btn" onclick="toggleMusic()">🎵</button>
 </div>
 
