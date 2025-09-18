@@ -138,12 +138,12 @@
 
 .wedding-title {
   position: absolute;
-  top: 10%;               /* atur seberapa tinggi di atas frame */
+  top: 20%;               /* atur seberapa tinggi di atas frame */
   left: 50%;
   transform: translateX(-50%);
   font-family: 'Great Vibes', cursive;
   font-size: 36px;
-  color: #b1d4aa;
+  color: #555;
   z-index: 3;             /* biar di atas frame */
 }
 
@@ -614,7 +614,7 @@ section {
     <div class="overlay">
       <div class="content">
         <h2>Happy Wedding</h2>
-        <h1>Yusuf & Jihan</h1>
+        <h1>Arin & Yusuf </h1>
         <p>Tanpa Mengurangi Rasa Hormat, Kami Mengundang Bapak/Ibu/Saudara/Saudari Pada Acara Pernikahan Kami</p>
         <button class="btn" onclick="openInvitation()">📩 Buka Undangan</button>
       </div>
@@ -640,23 +640,23 @@ section {
   <h2 class="wedding-title">The Wedding Of</h2> 
   <img src="frame.png" alt="Frame" class="rotating-frame"> 
   <div class="bride-groom"> 
-    <div class="name">Yusuf</div> 
+    <div class="name">Arin</div> 
     <div class="and">dan</div> 
-    <div class="name">Jihan</div> 
+    <div class="name">Yusuf</div> 
   </div> 
 </div> </div>
 
     <!-- ===== SECTION UCAPAN ===== -->
   <section id="wedding-intro" class="reveal">
-    <h1 class="script">Yusuf & Jihan</h1>
+    <h1 class="script">Arin & Yusuf </h1>
   <p>
       Di antara tanda-tanda (kebesaran)-Nya ialah bahwa Dia menciptakan pasangan-pasangan
       untukmu dari (jenis) dirimu sendiri agar kamu merasa tenteram kepadanya. 
       Dia menjadikan di antaramu rasa cinta dan kasih sayang. Sesungguhnya pada 
       yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi 
-      kaum yang berpikir. <br>
+      kaum yang berpikir. <br><br>
       Q.S. Ar Rum:21
-  </p>
+  </p><br><br>
       <div class="countdown reveal" id="countdown"></div>
     <button class="btn-main reveal" onclick="saveToCalendar()">Save To Calendar</button>
   </section>
@@ -704,7 +704,7 @@ section {
       <span class="hadiah-number">00112233445566</span>
       <button class="copy-btn" onclick="copyText('00112233445566')">Copy</button>
     </div>
-    <div class="hadiah-bottom">Yusuf Jihan</div>
+    <div class="hadiah-bottom">Yusuf Arin</div>
   </div>
 
   <!-- SeaBank -->
@@ -714,7 +714,7 @@ section {
       <span class="hadiah-number">00112233445577</span>
       <button class="copy-btn" onclick="copyText('00112233445577')">Copy</button>
     </div>
-    <div class="hadiah-bottom">Yusuf Jihan</div>
+    <div class="hadiah-bottom">Yusuf Arin</div>
   </div>
 </section>
 
@@ -850,10 +850,10 @@ function copyText(text) {
 
 /* === SAVE TO CALENDAR === */
 function saveToCalendar() {
-  const title = "Pernikahan Yusuf & Jihan";
+  const title = "Pernikahan Arin & Yusuf ";
   const start = "20251225T020000Z"; // 25 Des 2025, 09:00 WIB
   const end   = "20251225T050000Z"; // 25 Des 2025, 12:00 WIB
-  const details = "Undangan pernikahan Yusuf & Jihan";
+  const details = "Undangan pernikahan Arin & Yusuf ";
   const location = "https://maps.app.goo.gl/d2vxbkdzUgZqUaMKA"; // link Google Maps
 
   const url = `https://calendar.google.com/calendar/r/eventedit?text=${encodeURIComponent(title)}&dates=${start}/${end}&details=${encodeURIComponent(details)}&location=${encodeURIComponent(location)}`;
