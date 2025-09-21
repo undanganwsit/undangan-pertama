@@ -4,821 +4,10 @@
   <meta charset="UTF-8">
   <title>Wedding Invitation</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body, html {
-      height: 100%;
-      font-family: 'Playfair Display', serif;
-      overflow-x: hidden;
-      scroll-behavior: smooth;
-    }
-    html {
-  scroll-behavior: smooth;
-}
-
-
-    /* === HALAMAN AWAL (COVER) === */
-    #cover {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      z-index: 9999;
-    }
-
-    .background {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: url("10190.jpg") no-repeat center center;
-      background-size: cover;
-      opacity: 1;
-      transform: translateY(100%);
-      animation: slideUp 0s ease forwards;
-    }
-
-    @keyframes slideUp { to { transform: translateY(0); } }
-
-    .overlay {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.25);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 20px;
-    }
-
-    .content {
-      color: #fff;
-      animation: fadeIn 3s ease;
-    }
-
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
-    .content h2 { font-size: 24px; letter-spacing: 2px; margin-bottom: 10px; font-weight: 400; }
-    .content h1 { font-family: 'Great Vibes', cursive; font-size: 60px; margin-bottom: 330px; line-height: 1.2; }
-    .content p { font-size: 18px; line-height: 1.6; margin-bottom: 25px; max-width: 90%; margin-left: auto; margin-right: auto; }
-
-    .btn {
-      background: #b1d4aa;
-      color: white;
-      padding: 14px 32px;
-      border: none;
-      border-radius: 30px;
-      font-size: 18px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.3s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .btn:hover { background: #9cc095; }
-/* ===== OPENING STYLE ===== */
-#opening {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-}
-
-#bg-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-}
-
-.overlay {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  color: white;
-  z-index: 2;
-  background: transparent; /* ini penting */
-}
-
-.rotating-frame {
-  width: 100vw;  /* 60% dari lebar layar */
-  max-width: 450px;
-  height: auto;
-  animation: rotateFrame 20s linear infinite;
-}
-
-/* Nama pengantin */
-.bride-groom {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: #b1d4aa;
-  z-index: 2;
-}
-
-.text-wrapper {
-  position: absolute;
-  top: 50%;                 /* pusat vertikal */
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  z-index: 3;
-  display: flex;
-  flex-direction: column;   /* urut atas-bawah */
-  align-items: center;
-}
-
-.wedding-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 14px;
-  letter-spacing: 2px;
-  color: #555;
-  margin-bottom: 10px;      /* jarak ke nama Arin */
-}
-
-.name {
-  font-family: 'Great Vibes', cursive;
-  font-size: 48px;
-  color: #85a57a;           /* warna hijau lembut */
-}
-
-.and {
-  font-family: 'Great Vibes', cursive;
-  font-size: 18px;
-  text-transform: uppercase;
-  margin: 1px 0;
-  color: #555;
-}
-
-/* Animasi */
-@keyframes spin {
-  from { transform: translate(-50%, -50%) rotate(0deg); }
-  to { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
-@keyframes fadeInZoom {
-  0% { opacity: 0; transform: scale(0.8); }
-  100% { opacity: 1; transform: scale(1); }
-}
-
-@keyframes rotateFrame {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-    /* === HALAMAN UTAMA === */
-    section { 
-      height: 100vh; 
-      display: flex; 
-      flex-direction: column; 
-      justify-content: center; 
-      align-items: center; 
-      text-align: center; 
-    }
-
-    /* Countdown */
-    .countdown { display: flex; gap: 15px; margin: 20px 0; }
-    .countdown div {
-      background: #fff; /* warna #b1d4aa tapi transparan */
-      color: #b1d4aa;                          /* biar teks tetap jelas */
-      padding: 10px 15px;
-      border-radius: 10px;
-      font-size: 18px;
-      font-weight: bold;
-    }
-
-    /* Button */
-    .btn-main {
-      background: #fff;
-      color: #b1d4aa;
-      padding: 12px 24px;
-      border: none;
-      border-radius: 25px;
-      font-size: 16px;
-      cursor: pointer;
-      margin-top: 15px;
-    }
-.btn-main:hover {
-  background: #9cc095;
-  color: #fff; /* teks jadi putih saat hover */
-}
-
-
-
-    /* Navigasi bawah */
-.nav {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: none;
-  gap: 15px;
-  z-index: 9999; /* naikin biar selalu di atas */
-}
-
-    .nav button {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      border: none;
-      background: #b1d4aa;
-      color: white;
-      font-size: 22px;
-      cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      transition: background 0.3s ease;
-    }
-
-    .nav button:hover {
-      background: #9cc095;
-    }
-
-/* ===== SECTION UCAPAN ===== */
-#wedding-intro {
-  position: relative;
-  background: #b1d4aa;       /* warna dasar */
-  color: #fff;
-  padding: 60px 45px;
-  text-align: center;
-  height: auto;
-  min-height: unset;
-  overflow: hidden;          /* biar pseudo-element nggak bocor */
-}
-
-#wedding-intro::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url("texture4.png") center/cover no-repeat;
-  opacity: 0.5;             /* atur transparansi tekstur */
-  z-index: 0;
-}
-
-#wedding-intro * {
-  position: relative;
-  z-index: 1;                /* supaya teks dan tombol tetap di atas background */
-}
-
-#wedding-intro .script {
-  font-family: 'Great Vibes', cursive;
-  font-size: 36px;
-  margin-bottom: 20px;
-  color: #fff;
-}
-
-#wedding-intro p {
-  font-family: 'Playfair Display', serif;
-  font-size: 14px;
-  line-height: 1.8;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-/* ===== BUNGA PEMISAH ===== */
-.section-divider {
-  position: relative;
-  width: 100%;
-  height: 120px;
-  margin: 0;
-}
-
-.section-divider img {
-  position: absolute;
-  top: 0%;
-  left: 50%;
-  transform: translate(-50%, 50%); /* mulai agak ke bawah */
-  width: auto;
-  max-width: 600px;
-  opacity: 0;
-  transition: all 1s ease-out; /* transisi halus */
-}
-
-.section-divider img.show {
-  transform: translate(-50%, -50%); /* naik ke tengah */
-  opacity: 1;
-}
-
-/* ===== SECTION ACARA ===== */
-#acara {
-  background: url("109721.jpg") no-repeat center center/cover;
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.acara-wrapper {
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-/* Card dengan frame setengah lingkaran */
-.acara-card {
-  background: #b1d4aa;
-  margin: 30px 0;
-  padding: 30px 20px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-  position: relative;
-  overflow: hidden;
-
-  height: 300px;       /* <- ini tinggi frame */
-  display: flex;       
-  flex-direction: column;
-  justify-content: center; /* konten tetap di tengah */
-}
-
-/* Untuk Akad: atas melengkung */
-.acara-akad {
-  border-radius: 50% 50% 0 0 / 40% 40% 0 0; /* bikin oval di atas */
-}
-
-/* Untuk Resepsi: bawah melengkung */
-.acara-resepsi {
-  border-radius: 0 0 50% 50% / 0 0 40% 40%; /* bikin oval di bawah */
-}
-
-/* Title */
-.acara-title {
-  font-family: 'Great Vibes', cursive;
-  font-size: 28px;
-  color: #fff;
-  margin-bottom: 15px;
-}
-
-/* Tanggal */
-.acara-date {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #fff;
-}
-
-/* Detail */
-.acara-detail {
-  font-size: 14px;
-  line-height: 1.6;
-  color: #fff;
-}
-/* Buat semua section default tetap 100vh */
-section {
-  height: 100vh;
-}
-
-/* efek bunga jatuh */
-.flower-fall {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none; /* biar gak ganggu klik */
-  overflow: hidden;
-  z-index: 1;
-}
-
-.flower-fall span {
-  position: absolute;
-  top: -10%;
-  animation: fall linear infinite;
-}
-
-.flower-fall span img {
-  width: 40px;  /* atur ukuran bunga */
-  height: auto;
-  opacity: 1;
-}
-
-@keyframes fall {
-  0% {
-    transform: translateY(-10%) rotate(0deg);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(110vh) rotate(360deg);
-    opacity: 0.5;
-  }
-}
-
-/* variasi posisi, delay, dan durasi */
-.flower-fall span:nth-child(1) {
-  left: 10%;
-  animation-duration: 8s;
-  animation-delay: 0s;
-}
-.flower-fall span:nth-child(2) {
-  left: 30%;
-  animation-duration: 10s;
-  animation-delay: 2s;
-}
-.flower-fall span:nth-child(3) {
-  left: 50%;
-  animation-duration: 12s;
-  animation-delay: 4s;
-}
-.flower-fall span:nth-child(4) {
-  left: 70%;
-  animation-duration: 9s;
-  animation-delay: 1s;
-}
-.flower-fall span:nth-child(5) {
-  left: 90%;
-  animation-duration: 11s;
-  animation-delay: 3s;
-}
-
-/* ===== SECTION COUPLE ===== */
-#couple {
-  background: url("9849.jpg") no-repeat center center/cover;
-  background-color: rgba(255,255,255,0.5); /* putih transparan di atas bg */
-  min-height: 150vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 40px 20px;
-  color: #9cc095;
-}
-
-.couple-card {
-  background: rgba(255, 255, 255, 0.85); /* putih elegan */
-  border-radius: 20px;
-  padding: 30px 20px;
-  margin: 20px auto;
-  max-width: 450px;
-  text-align: center;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  border: 2px solid #b1d4aa; /* frame hijau muda */
-}
-
-.couple-slider {
-  max-width: 600px;
-  border-radius: 20px;
-  padding: 30px;
-}
-
-.section-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 28px;
-  margin-bottom: 10px;
-}
-
-.section-subtitle {
-  font-family: 'Georgia', serif;
-  font-size: 16px;
-  margin-bottom: 20px;
-}
-
-.photo-frame {
-  width: 220px;
-  height: 300px;
-  margin: 0 auto 20px auto;
-  border-radius: 50% / 40%; /* bikin oval */
-  overflow: hidden;
-  border: 3px solid #9cc095;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-}
-
-.photo-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.couple-name {
-  font-family: 'Great Vibes', cursive;
-  font-size: 36px;
-  color: #9cc095;
-  margin-bottom: 10px;
-}
-
-.couple-message {
-  font-family: 'Merriweather', serif;
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-/* ===== SECTION HADIAH + UCAPAN ===== */
-#hadiah-ucapan {
-  position: relative;
-  background: #b1d4aa;
-  padding: 60px 20px 120px;
-  text-align: center;
-  overflow: hidden;
-  isolation: isolate;
-  min-height: 200vh; /* ⬅️ 2 kali tinggi layar */
-}
-
-#hadiah-ucapan::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url("texture4.png") center/cover no-repeat;
-  opacity: 0.5;
-  z-index: -1;
-}
-
-/* Biar isi tetap di atas */
-#hadiah-ucapan * {
-  position: relative;
-  z-index: 1;
-}
-
-/* Bagian Hadiah */
-.hadiah-title {
-  font-family: 'Great Vibes', cursive;
-  font-size: 36px;
-  color: #fff;
-  margin-bottom: 15px;
-}
-
-.hadiah-subtitle {
-  font-family: 'Playfair Display', serif;
-  font-size: 14px;
-  line-height: 1.8;
-  color: #fff;
-  max-width: 700px;
-  margin: 0 auto 30px;
-}
-
-.hadiah-card {
-  background: #fff;
-  border-radius: 15px;
-  padding: 15px 20px;
-  margin: 15px auto;
-  max-width: 420px;
-  text-align: left;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-}
-
-.hadiah-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.hadiah-logo {
-  width: 50px;
-  margin-right: 15px;
-}
-
-.hadiah-number {
-  flex: 1;
-  font-weight: bold;
-  font-size: 18px;
-  color: #333;
-}
-
-.hadiah-card .hadiah-number {
-  font-weight: bold;
-  font-size: 16px;
-  color: #333;
-}
-
-.hadiah-card .hadiah-bottom {
-  margin-top: 8px;
-  font-size: 14px;
-  color: #555;
-  font-family: 'Playfair Display', serif;
-  line-height: 1.6;
-}
-
-.copy-btn {
-  margin-left: 15px;
-  padding: 6px 14px;
-  border: none;
-  border-radius: 8px;
-  background: #b1d4aa; 
-  color: #fff;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-.copy-btn:hover {
-  background: #9cc095;
-}
-.hadiah-bottom {
-  margin-top: 10px;
-  font-size: 14px;
-  color: #555;
-  font-family: 'Playfair Display', serif;
-}
-
-/* Divider antar bagian */
-.divider {
-  margin: 60px auto;
-  width: 100px;
-  height: 2px;
-  background: #fff;
-  opacity: 0.6;
-}
-
-/* Bagian Ucapan */
-.ucapan-maps-title {
-  font-family: 'Great Vibes', cursive;
-  font-size: 36px;
-  margin-bottom: 20px;
-  color: #fff;
-}
-
-.ucapan-maps-subtitle {
-  font-family: 'Playfair Display', serif;
-  font-size: 14px;
-  line-height: 1.8;
-  max-width: 700px;
-  margin: 0 auto 25px;
-  color: #f9f9f9;
-}
-
-.ucapan-maps-form textarea {
-  width: 100%;
-  max-width: 700px;
-  border: 1.5px solid #fff;
-  border-radius: 8px;
-  padding: 12px;
-  font-size: 14px;
-  font-family: 'Playfair Display', serif;
-  resize: none;
-  background: #fff;
-  color: #333;
-}
-
-.ucapan-maps-form textarea:focus {
-  border-color: #9cc095;
-  outline: none;
-}
-
-.ucapan-maps-btn {
-  margin-top: 15px;
-  padding: 10px 22px;
-  border: none;
-  border-radius: 6px;
-  background: #fff;
-  color: #b1d4aa;
-  font-size: 14px;
-  font-family: 'Playfair Display', serif;
-  cursor: pointer;
-  transition: background 0.3s, color 0.3s;
-}
-.ucapan-maps-btn:hover {
-  background: #9cc095;
-  color: #fff;
-}
-
-/* Maps */
-.ucapan-maps-location {
-  margin-top: 35px;
-}
-.ucapan-maps-location-title {
-  font-family: 'Great Vibes', cursive;
-  font-size: 30px;
-  margin-bottom: 15px;
-  color: #fff;
-}
-.ucapan-maps-location iframe {
-  border-radius: 10px;
-  border: 2px solid #fff;
-  max-width: 100%;
-  height: 300px;
-  background: #fff;
-}
-
-/* ===== SECTION LOVE STORY ===== */
-#love-story {
-  position: relative;
-  background: url("10662.jpg") no-repeat center center/cover;
-  background-color: rgba(255,255,255,0.5); /* putih transparan di atas bg */
-  background-blend-mode: overlay; /* bisa coba lighten, multiply, soft-light */
-  padding: 60px 20px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
-
-
-/* Frame setengah lingkaran atas */
-.love-story-frame {
-  background: #b1d4aa;
-  margin: 30px 0;
-  padding: 30px 20px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-  position: relative;
-  overflow: hidden;
-
-  height: 350px; /* sedikit lebih tinggi biar muat teks */
-  max-width: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  border-radius: 50% 50% 0 0 / 40% 40% 0 0; /* lengkung atas */
-}
-
-/* Title */
-.love-story-title {
-  font-family: 'Great Vibes', cursive;
-  font-size: 32px;
-  color: #fff;
-  margin-bottom: 15px;
-}
-
-/* Isi cerita */
-.love-story-text {
-  font-size: 14px;
-  line-height: 1.6;
-  color: #fff;
-  padding: 0 10px;
-}
-
-.love-story-bottom {
-  text-align: center;
-  margin-top: 0;
-  margin-bottom: -250px; /* dorong gambar ke bawah */
-  position: relative;
-}
-
-.love-story-bottom img {
-  display: block;
-  margin: 0 auto;
-  max-width: 550px;
-  transform: translateY(20px); /* geser ke bawah */
-}
-
-/* ===== FOOTER ===== */
-#footer {
-  background: #b1d4aa;   /* warna footer */
-  padding: 50px 30px;
-  font-family: 'Poppins', sans-serif;
-  color: #fff;           /* teks putih */
-}
-
-.footer-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1100px;
-  margin: 0 auto;
-  flex-wrap: wrap; /* biar responsif di HP */
-}
-
-.footer-left {
-  flex: 1;
-}
-
-.footer-logo {
-  width: 140px;
-  height: auto;
-}
-
-.footer-right {
-  flex: 2;
-  text-align: right;
-}
-
-.footer-right p {
-  margin: 5px 0;
-  font-size: 14px;
-}
-
-.footer-right a {
-  color: #fff;             /* link putih */
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.footer-right a:hover {
-  text-decoration: underline; /* efek hover */
-}
-
-    /* === REVEAL ANIMATION === */
-    .reveal {
-      opacity: 0;
-      transform: translateY(60px);
-      transition: all 1s ease;
-    }
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Mobile */
-    @media (max-width: 768px) {
-      .content h2 { font-size: 1rem; }
-      .content h1 { font-size: 2.5rem; }
-      .content p { font-size: 0.9rem; }
-      .btn { font-size: 0.9rem; padding: 12px 28px; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -828,7 +17,7 @@ section {
     <div class="overlay">
       <div class="content">
         <h2>Happy Wedding</h2>
-        <h1>Arin & Yusuf </h1>
+        <h1>Putri & Putra </h1>
         <p>Tanpa Mengurangi Rasa Hormat, Kami Mengundang Bapak/Ibu/Saudara/Saudari Pada Acara Pernikahan Kami</p>
         <button class="btn" onclick="openInvitation()">📩 Buka Undangan</button>
       </div>
@@ -837,10 +26,10 @@ section {
 
 <!-- ===== NAVIGASI + MUSIK ===== -->
 <div class="nav">
-  <a href="#wedding-intro"><button>🏠</button></a>
-  <a href="#acara"><button>📅</button></a>
-  <a href="#hadiah-ucapan"><button>💌</button></a>
-  <button id="music-btn" onclick="toggleMusic()">🎵</button>
+<a href="#wedding-intro"><button><i class="fas fa-home"></i></button></a>
+<a href="#acara"><button><i class="fas fa-calendar-alt"></i></button></a>
+<a href="#hadiah-ucapan"><button><i class="fas fa-envelope"></i></button></a>
+<button id="music-btn" onclick="toggleMusic()"><i class="fas fa-music"></i></button>
 </div>
 
 <!-- ===== OPENING ===== -->
@@ -852,17 +41,20 @@ section {
 <div class="overlay reveal"> 
   
   <img src="frame.png" alt="Frame" class="rotating-frame"> 
-  <div class="bride-groom"> 
-    <h2 class="wedding-title">The Wedding Of</h2> 
-    <div class="name">Arin</div> 
-    <div class="and">&</div> 
-    <div class="name">Yusuf</div> 
-  </div> 
+<div class="bride-groom">
+  <h2 class="wedding-title">The Wedding Of</h2> 
+  <div class="names-wrapper">
+    <span class="name left-name">Putri</span>
+    <span class="and">&</span>
+    <span class="name right-name">Putra</span>
+  </div>
+</div>
+
 </div> </div>
 
     <!-- ===== SECTION UCAPAN ===== -->
   <section id="wedding-intro" class="reveal">
-    <h1 class="script reveal">Arin & Yusuf </h1>
+    <h1 class="script reveal">Putri & Putra </h1>
   <p class="reveal">
       Di antara tanda-tanda (kebesaran)-Nya ialah bahwa Dia menciptakan pasangan-pasangan
       untukmu dari (jenis) dirimu sendiri agar kamu merasa tenteram kepadanya. 
@@ -896,128 +88,74 @@ section {
     <!-- Akad Nikah -->
     <div class="acara-card acara-akad reveal">
       <h2 class="acara-title">Akad Nikah</h2>
-      <div class="acara-date">Jum'at, 14 November 2025</div>
+      <div class="acara-date">Jum'at, 12 Agustus 2025</div>
       <p class="acara-detail">
         Pukul 07:00 WIB - Selesai <br>
         Bertempat di kediaman mempelai wanita<br>
-        Kradenan Gg 8, Pekalongan Selatan
+        Jl. Kebangsaan Selatan, Kel. Buleleng kec. Buleleng Selatan
       </p>
+        <button onclick="window.open('https://maps.app.goo.gl/fGkJCddBoqoEkyeW7','_blank')" 
+          class="resepsi-maps-btn reveal"> 📍 Lihat di Google Maps
+        </button>
     </div>
 
     <!-- Resepsi Pernikahan -->
     <div class="acara-card acara-resepsi reveal">
       <h2 class="acara-title">Resepsi Pernikahan</h2>
-      <div class="acara-date">Ahad, 16 November 2025</div>
+      <div class="acara-date">Ahad, 13 Agustus 2025</div>
       <p class="acara-detail">
         Pukul 10:00 WIB - 13.00 WIB <br>
         Aula Viva Sapugarut
       </p>
+        <button onclick="window.open('https://maps.app.goo.gl/fGkJCddBoqoEkyeW7','_blank')" 
+          class="resepsi-maps-btn reveal"> 📍 Lihat di Google Maps
+        </button>
     </div>
   </div>
 </section>
 
 <!-- ===== HALAMAN COUPLE ===== -->
 <section id="couple" class="reveal">
+
+  <!-- bunga kiri -->
+  <img src="bungaberdiri.png" alt="Bunga Kiri" class="bunga-samping bunga-kiri reveal">
+
+  <!-- bunga kanan -->
+  <img src="bungaberdiri.png" alt="Bunga Kanan" class="bunga-samping bunga-kanan reveal">
+
+  <h2 class="judul-couple reveal">Kedua Mempelai</h2>
   <div class="couple-slider reveal">
 
     <!-- Card mempelai wanita -->
-    <div class="couple-card reveal">
-      <div class="photo-frame reveal">
-        <img src="jihan.png" alt="Bride">
-      </div>
-      <h1 class="couple-name reveal">Jauharin Ni'ma</h1>
-      <p class="couple-message reveal">
-        Putri Bpk. Masrur Kaukab (Alm) dan Ibu Maftukhah
-      </p>
+    <div class="photo-frame reveal">
+      <img src="istri.png" alt="Bride">
     </div>
+    <h1 class="couple-name reveal">Putri Indo</h1>
+    <p class="couple-message reveal">
+      Putri Bpk. Jaya dan Ibu Luna
+    </p>
+    <div class="couple-sosmed reveal">
+      <a href="https://vm.tiktok.com/ZSHnGLGu9ym54-qNUhb/" target="_blank">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+
+    <br>
+      <h1 class="couple-dengan reveal">Dengan</h1>
+    <br>
 
     <!-- Card mempelai pria -->
-    <div class="couple-card reveal">
-      <div class="photo-frame reveal">
-        <img src="yusuf.png" alt="Groom">
-      </div>
-      <h1 class="couple-name reveal">Moh. Yusuf</h1>
-      <p class="couple-message reveal">
-        Putra Bpk. Kaliri (Alm) dan Ibu Baroyah (Almh)
-      </p>
+    <div class="photo-frame reveal">
+      <img src="suami.png" alt="Groom">
     </div>
-
+    <h1 class="couple-name reveal">Putra Indo</h1>
+    <p class="couple-message reveal">
+      Putra Bpk. Sentosa dan Ibu Maya
+    </p>
   </div>
 </section>
 
-<!-- ===== SECTION HADIAH + UCAPAN & MAPS ===== -->
-<section id="hadiah-ucapan" class="reveal">
-  <!-- Bagian Hadiah -->
-  <div class="hadiah-wrapper">
-    <h2 class="hadiah-title reveal">Titip Hadiah</h2>
-    <p class="hadiah-subtitle reveal">
-      Doa restu Bapak/Ibu sekalian merupakan karunia yang sangat berarti bagi kami. 
-      Dan jika memberi merupakan ungkapan tanda kasih, Bapak/Ibu dapat memberi kado secara cashless. 
-      Terima kasih ❤️
-    </p>
 
-    <!-- BCA -->
-    <div class="hadiah-card reveal">
-      <div class="hadiah-top">
-        <img src="bca.png" alt="BCA" class="hadiah-logo">
-        <span class="hadiah-number">00112233445566</span>
-        <button class="copy-btn" onclick="copyText('00112233445566')">Copy</button>
-      </div>
-      <div class="hadiah-bottom">Yusuf Arin</div>
-    </div>
-
-    <!-- SeaBank -->
-    <div class="hadiah-card reveal">
-      <div class="hadiah-top">
-        <img src="mandiri.png" alt="SeaBank" class="hadiah-logo">
-        <span class="hadiah-number">00112233445577</span>
-        <button class="copy-btn" onclick="copyText('00112233445577')">Copy</button>
-      </div>
-      <div class="hadiah-bottom">Yusuf Arin</div>
-    </div>
-
-<!-- Kado Fisik -->
-<div class="hadiah-card reveal">
-  <div class="hadiah-top">
-    <img src="gift.png" alt="Kado Fisik" class="hadiah-logo">
-    <span class="hadiah-number" id="alamat-kado">Kirim Kado</span>
-    <button class="copy-btn" onclick="copyText('Kradenan Gg 8, Pekalongan Selatan')">Copy</button>
-  </div>
-  <div class="hadiah-bottom">Kradenan Gg 8, Pekalongan Selatan</div>
-</div>
-
-<br><br><br>
-  <!-- Bagian Ucapan & Maps -->
-  <div class="ucapan-wrapper">
-    <h2 class="ucapan-maps-title reveal">Ucapan & Doa</h2>
-    <p class="ucapan-maps-subtitle reveal">
-      Dengan penuh rasa syukur, kami berharap doa restu dari Bapak/Ibu/Saudara/i 
-      sekalian untuk kebahagiaan pernikahan kami.
-    </p>
-
-    <!-- Form Ucapan -->
-    <div class="ucapan-maps-form reveal">
-      <textarea id="ucapanText" rows="4" placeholder="Tulis ucapan terbaikmu..."></textarea>
-      <br>
-      <button class="ucapan-maps-btn" onclick="kirimUcapan()">Kirim via WhatsApp</button>
-    </div>
-<br><br>
-    <!-- Maps -->
-    <div class="ucapan-maps-location reveal">
-      <h3 class="ucapan-maps-location-title">Lokasi Acara</h3>
-      <iframe 
-        src="https://www.google.com/maps?q=-7.803249,110.364678&hl=es;z=14&output=embed" 
-        allowfullscreen 
-        loading="lazy">
-      </iframe>
-      <br>
-      <button onclick="window.open('https://maps.app.goo.gl/SudKTfmu81KAoeNU7','_blank')" 
-              class="ucapan-maps-btn">
-        📍 Lihat di Google Maps
-      </button>
-    </div>
-  </div>
-</section>
 
 <!-- ===== SECTION LOVE STORY ===== -->
 <section id="love-story" class="reveal">
@@ -1038,9 +176,132 @@ section {
       Dari situlah cerita indah ini bermula, hingga akhirnya kami memutuskan untuk melangkah ke jenjang pernikahan.
     </p>
   </div>
-  <div class="love-story-bottom reveal">
-   <img src="bunga.png" alt="bunga hiasan">
+  <div class="love-story-bottom">
+    <img src="bunga.png" alt="bunga hiasan">
+  </div>
+</section>
+
+<!-- ===== SECTION HADIAH + UCAPAN & MAPS ===== -->
+<section id="hadiah-ucapan" class="reveal">
+  <!-- Bagian Hadiah -->
+  <div class="hadiah-wrapper">
+    <h2 class="hadiah-title reveal">Titip Hadiah</h2>
+    <p class="hadiah-subtitle reveal">
+      Doa restu Bapak/Ibu sekalian merupakan karunia yang sangat berarti bagi kami. 
+      Dan jika memberi merupakan ungkapan tanda kasih, Bapak/Ibu dapat memberi kado secara cashless. 
+      Terima kasih ❤️
+    </p>
+
+    <!-- BCA -->
+    <div class="hadiah-card reveal">
+      <div class="hadiah-top">
+        <img src="bca.png" alt="BCA" class="hadiah-logo">
+        <span class="hadiah-number">233300011122</span>
+        <button class="copy-btn" onclick="copyText('233300011122')">Copy</button>
+      </div>
+      <div class="hadiah-bottom">Putri Indo</div>
+    </div>
+
+    <!-- SeaBank -->
+    <div class="hadiah-card reveal">
+      <div class="hadiah-top">
+        <img src="bca.png" alt="SeaBank" class="hadiah-logo">
+        <span class="hadiah-number">233300011133</span>
+        <button class="copy-btn" onclick="copyText('233300011133')">Copy</button>
+      </div>
+      <div class="hadiah-bottom">Putra Indo</div>
+    </div>
+
+<!-- Kado Fisik -->
+<div class="hadiah-card reveal">
+  <div class="hadiah-top">
+    <img src="gift.png" alt="Kado Fisik" class="hadiah-logo">
+    <span class="hadiah-number" id="alamat-kado">Kirim Kado</span>
+    <button class="copy-btn" onclick="copyText('Jl. Kebangsaan Selatan, Kel. Buleleng kec. Buleleng Selatan')">Copy</button>
+  </div>
+  <div class="hadiah-bottom">Jl. Kebangsaan Selatan, Kel. Buleleng kec. Buleleng Selatan</div>
 </div>
+
+<br><br>
+
+    <!-- Form Ucapan -->
+    <h2 class="ucapan-maps-title reveal">Ucapan & Doa</h2>
+    <p class="ucapan-maps-subtitle reveal">
+      Dengan penuh rasa syukur, kami berharap doa restu dari Bapak/Ibu/Saudara/i 
+      sekalian untuk kebahagiaan pernikahan kami.
+    </p>
+
+<!-- === SECTION RSVP === -->
+<div class="ucapan-maps-form reveal">
+  <form id="rsvpForm">
+    <input type="text" id="nama" name="nama" placeholder="Nama Kamu" required>
+    <textarea id="ucapanText" name="ucapanText" rows="4" placeholder="Tulis ucapan terbaikmu..." required></textarea>
+    <select id="kehadiran" name="kehadiran" required>
+      <option value="">-- Pilih Kehadiran --</option>
+      <option value="Hadir">Hadir</option>
+      <option value="Tidak Hadir">Tidak Hadir</option>
+    </select>
+
+    <button type="submit" class="ucapan-maps-btn">Kirim</button>
+  </form>
+</div><br><br><br>
+
+<!-- === SECTION LIST UCAPAN === -->
+<div id="listUcapan" class="ucapan-list reveal">
+  <h3 class="ucapan-maps-table reveal">Daftar Ucapan & Kehadiran</h3>
+<table id="ucapanTable" class="reveal">
+  <thead>
+    <tr>
+      <th>Nama</th>
+      <th>Ucapan</th>
+      <th>Kehadiran</th>
+    </tr>
+  </thead>
+  <tbody id="ucapanBody">
+    <!-- Data dari Google Sheets masuk ke sini -->
+  </tbody>
+</table>
+
+
+    <!-- Tambahan bagian total -->
+  <div id="ucapanSummary" class="ucapan-summary">
+    <p>Jumlah Hadir: <span id="jumlahHadir">0</span></p>
+    <p>Jumlah Tidak Hadir: <span id="jumlahTidakHadir">0</span></p>
+  </div>
+</div>
+</section>
+
+<!-- ===== SECTION PENUTUP ===== -->
+<section id="penutup" class="reveal">
+    <!-- Bunga Atas -->
+  <div class="bunga-separator bunga-atas">
+    <img src="bunga.png" alt="bunga atas">
+  </div>
+  
+      <div class="flower-fall">
+    <!-- bikin banyak bunga -->
+     <span><img src="bunga1.png"></span>
+     <span><img src="bunga2.png"></span>
+     <span><img src="bunga3.png"></span>
+     <span><img src="bunga1.png"></span>
+     <span><img src="bunga2.png"></span>
+     <span><img src="bunga3.png"></span>
+  </div>
+  <div class="penutup-overlay reveal">
+    <div class="penutup-frame reveal">
+      <img src="pasutri.png" alt="Foto Penutup" />
+    </div>
+    <p class="penutup-text reveal">
+      Merupakan suatu kehormatan dan kebahagiaan bagi kami, apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.
+      <br> Atas kehadiran dan doa restunya, kami mengucapkan terima kasih.
+    </p>
+    <p class="penutup-nama reveal">Putri & Putra</p>
+  </div>
+
+    <!-- Bunga Bawah -->
+  <div class="bunga-separator bunga-bawah">
+    <img src="bunga.png" alt="bunga bawah">
+  </div>
 </section>
 
 <!-- ===== FOOTER ===== -->
@@ -1061,7 +322,7 @@ section {
         <a href="mailto:wsitofficial@gmail.com">wsitofficial@gmail.com</a>
       </p>
       <p><i class="fab fa-tiktok"></i> 
-        <a href="https://www.tiktok.com/@skuy" target="_blank">@wsitofficial</a>
+        <a href="https://vm.tiktok.com/ZSHnGLGu9ym54-qNUhb/" target="_blank">@wsitofficial</a>
       </p>
     </div>
   </div>
@@ -1070,125 +331,9 @@ section {
 
   <!-- Musik -->
   <audio id="bg-music" loop>
-    <source src="bergemasampaiselamanya.m4a" type="audio/mpeg">
+    <source src="pernikahankita.mp3" type="audio/mpeg">
     Browser kamu tidak mendukung audio.
   </audio>
-
-<script>
-  /* === FUNGSI MUSIK === */
-  const music = document.getElementById("bg-music");
-  const musicBtn = document.getElementById("music-btn");
-  let isPlaying = true;
-
-  function toggleMusic() {
-    if (isPlaying) {
-      music.pause();
-      musicBtn.innerHTML = "⏸️"; 
-    } else {
-      music.play();
-      musicBtn.innerHTML = "🎵"; 
-    }
-    isPlaying = !isPlaying;
-  }
-
-  /* === FUNGSI BUKA UNDANGAN === */
-  function openInvitation() {
-    document.getElementById("cover").style.display = "none";
-    document.querySelector(".nav").style.display = "flex";
-    music.play();
-
-  // mainkan video setelah buka undangan
-  const video = document.getElementById("bg-video");
-  video.play();
-
-    // langsung trigger cek reveal pertama kali
-    revealObserver.observe(document.getElementById("opening"));
-  }
-
-   /* === SECTION UCAPAN & MAPS === */
-  function kirimUcapan() {
-    let ucapan = document.getElementById("ucapanText").value.trim();
-    if (ucapan === "") {
-      alert("Tulis ucapan terlebih dahulu 😊");
-      return;
-    }
-    let nomor = "6282338804175"; // nomor WA (pakai kode negara 62)
-    let url = "https://wa.me/" + nomor + "?text=" + encodeURIComponent(ucapan);
-    window.open(url, "_blank");
-  }
-
-  /* === COUNTDOWN === */
-  const countdownEl = document.getElementById("countdown");
-  const weddingDate = new Date("2025-12-25 09:00:00").getTime(); 
-  setInterval(() => {
-    const now = new Date().getTime();
-    const distance = weddingDate - now;
-    if (distance < 0) { countdownEl.innerHTML = "Acara sudah berlangsung"; return; }
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    countdownEl.innerHTML = `
-      <div>${days}<br>Hari</div>
-      <div>${hours}<br>Jam</div>
-      <div>${minutes}<br>Menit</div>
-      <div>${seconds}<br>Detik</div>
-    `;
-  }, 1000);
-
-/* === COPY TO CLIPBOARD === */
-function copyText(text) {
-  navigator.clipboard.writeText(text).then(() => {
-    // sukses, tapi tidak perlu alert
-    console.log("Teks berhasil disalin:", text); // opsional untuk debug
-  }).catch(err => {
-    console.error("Gagal menyalin teks: ", err);
-  });
-}
-
-/* === SAVE TO CALENDAR === */
-function saveToCalendar() {
-  const title = "Pernikahan Arin & Yusuf ";
-  const start = "20251225T020000Z"; // 25 Des 2025, 09:00 WIB
-  const end   = "20251225T050000Z"; // 25 Des 2025, 12:00 WIB
-  const details = "Undangan pernikahan Arin & Yusuf ";
-  const location = "https://maps.app.goo.gl/SudKTfmu81KAoeNU7"; // link Google Maps
-
-  const url = `https://calendar.google.com/calendar/r/eventedit?text=${encodeURIComponent(title)}&dates=${start}/${end}&details=${encodeURIComponent(details)}&location=${encodeURIComponent(location)}`;
-  
-  window.open(url, "_blank");
-}
-
- /* === REVEAL ANIMATION BUNGA === */
-  document.addEventListener("DOMContentLoaded", function () {
-    const bunga = document.querySelector(".section-divider img");
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          bunga.classList.add("show");
-        }
-      });
-    });
-
-    observer.observe(bunga);
-  });
-
-  /* === REVEAL ANIMATION WITH INTERSECTION OBSERVER === */
-  const reveals = document.querySelectorAll(".reveal");
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("active");
-        // kalau mau sekali saja animasi, uncomment ini:
-        // revealObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.2 });
-
-  reveals.forEach(el => {
-    revealObserver.observe(el);
-  });
-</script>
+  <script src="script.js"></script>
 </body>
 </html>
