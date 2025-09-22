@@ -998,6 +998,80 @@ section {
 }
 
 
+/* ===== SECTION GALLERY ===== */
+#gallery {
+  position: relative;
+  background: url("texture5.png") no-repeat center center/cover;
+  min-height: 200vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 60px 20px;
+  color: #333;
+}
+
+.gallery-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 36px;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  max-width: 1000px;
+  margin: 0 auto;
+  grid-auto-flow: dense;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .4s ease;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.05);
+}
+
+/* Ukuran khusus */
+.gallery-item.tall {
+  grid-row: span 2; /* tall isi 2 baris */
+}
+
+.gallery-item.wide {
+  grid-column: span 2; /* wide isi 2 kolom */
+}
+
+.gallery-decor-top {
+  position: absolute;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  line-height: 0;
+  z-index: 5; /* di atas background tapi di bawah konten */
+    top: -60px;
+}
+
+.gallery-decor-top img {
+  display: block;
+  margin: 0 auto;
+  max-width: 700px; /* samakan dengan section-divider */
+  width: 100%;
+  height: auto;
+}
+
+
 /* ===== SECTION PENUTUP ===== */
 #penutup {
   position: relative;
