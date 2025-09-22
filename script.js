@@ -108,7 +108,7 @@ document.getElementById("rsvpForm").addEventListener("submit", function(e) {
 
   let formData = new FormData(this);
 
-  fetch("https://script.google.com/macros/s/AKfycbzi3sbHzkfLYI1lraAJGMh0oLO-_XDua3sIWChHD-HBD0KwCbnrpR1gt9A8iRNywnNbLQ/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbwtzT44TzIKxDMhPuqYwQ96HhNAz-l1PQ02IU_fV3vmHKA3TfWBcfxFWNW6gmVPmNrd/exec", {
     method: "POST",
     body: formData
   })
@@ -122,7 +122,7 @@ document.getElementById("rsvpForm").addEventListener("submit", function(e) {
 
 
 
-const GET_URL = "https://script.google.com/macros/s/AKfycbzi3sbHzkfLYI1lraAJGMh0oLO-_XDua3sIWChHD-HBD0KwCbnrpR1gt9A8iRNywnNbLQ/exec"; 
+const GET_URL = "https://script.google.com/macros/s/AKfycbwtzT44TzIKxDMhPuqYwQ96HhNAz-l1PQ02IU_fV3vmHKA3TfWBcfxFWNW6gmVPmNrd/exec"; 
 const ucapanBody = document.getElementById("ucapanBody");
 
 function loadUcapan() {
