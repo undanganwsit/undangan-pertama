@@ -56,6 +56,7 @@
 
     .guest-box {
   margin-bottom: 40px; /* jarak sebelum tombol */
+  text-align: center;
 }
 
 .guest-box .dear {
