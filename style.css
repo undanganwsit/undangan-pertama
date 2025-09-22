@@ -52,7 +52,25 @@
 
     .content h2 { font-size: 24px; letter-spacing: 2px; margin-bottom: 10px; font-weight: 400; }
     .content h1 { font-family: 'Great Vibes', cursive; font-size: 60px; margin-bottom: 330px; line-height: 1.2; }
-    .content p { font-size: 18px; line-height: 1.6; margin-bottom: 25px; max-width: 90%; margin-left: auto; margin-right: auto; }
+    .content p { font-family: 'Playfair Display', serif; font-size: 18px; line-height: 1.6; margin-bottom: 25px; max-width: 90%; margin-left: auto; margin-right: auto; }
+
+    .guest-box {
+  margin-bottom: 40px; /* jarak sebelum tombol */
+}
+
+.guest-box .dear {
+  font-size: 18px;
+  margin: 0;            /* buang margin default */
+  padding: 0;
+  color: #fff;
+}
+
+.guest-box .guest-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  color: #ffff;
+  margin: 5px 0 0 0;     /* kasih jarak rapat ke atas (5px aja) */
+}
 
     .btn {
       background: #c92434;
@@ -69,47 +87,6 @@
       gap: 8px;
     }
     .btn:hover { background: #812121; }
-
-    .content h2.cover-subtitle {
-  font-size: 24px;
-  letter-spacing: 2px;
-  margin-bottom: 10px;
-  font-weight: 400;
-}
-
-.content h1.cover-names {
-  font-family: 'Great Vibes', cursive;
-  font-size: 60px;
-  margin-bottom: 30px;
-  line-height: 1.2;
-  color: #fff;
-}
-
-.content p.cover-text {
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 25px;
-  max-width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  color: #f1f1f1;
-}
-
-/* Nama tamu */
-.cover-guest {
-  font-size: 20px;
-  font-weight: 500;
-  margin-bottom: 35px;
-  color: #fff;
-}
-
-.cover-guest span {
-  display: inline-block;
-  margin-top: 6px;
-  font-family: 'Great Vibes', cursive;
-  font-size: 32px;
-  color: #ffe4ec; /* warna lembut elegan */
-}
 
 
 
