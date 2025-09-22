@@ -183,3 +183,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   observer.observe(target);
 });
+
+
+
+ const urlParams = new URLSearchParams(window.location.search);
+  const nama = urlParams.get("nama") || "Tamu Undangan";
+  document.getElementById("nama-tamu").innerText = nama;
