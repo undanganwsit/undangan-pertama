@@ -57,6 +57,9 @@
     .guest-box {
   margin-bottom: 40px; /* jarak sebelum tombol */
   text-align: center;
+  max-width: 90%;   /* biar fleksibel lebar */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .guest-box .dear {
@@ -71,6 +74,8 @@
   font-size: 24px;
   color: #ffff;
   margin: 5px 0 0 0;     /* kasih jarak rapat ke atas (5px aja) */
+    display: inline-block; /* biar lebarnya ikut teks */
+  white-space: nowrap;   /* cegah teks turun baris */
 }
 
     .btn {
