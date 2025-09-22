@@ -54,17 +54,19 @@
     .content h1 { font-family: 'Great Vibes', cursive; font-size: 60px; margin-bottom: 330px; line-height: 1.2; }
     .content p { font-family: 'Playfair Display', serif; font-size: 18px; line-height: 1.6; margin-bottom: 25px; max-width: 90%; margin-left: auto; margin-right: auto; }
 
-    .guest-box {
-  margin-bottom: 40px; /* jarak sebelum tombol */
+.guest-box {
+  margin-bottom: 40px;
   text-align: center;
-  max-width: 90%;   /* biar fleksibel lebar */
-  margin-left: auto;
-  margin-right: auto;
+}
+
+.guest-box .guest-text {
+  display: inline-block; /* jadi satu blok kecil di tengah */
+  text-align: center;    /* isi di dalamnya juga center */
 }
 
 .guest-box .dear {
   font-size: 18px;
-  margin: 0;            /* buang margin default */
+  margin: 0;
   padding: 0;
   color: #fff;
 }
@@ -72,10 +74,10 @@
 .guest-box .guest-name {
   font-family: 'Playfair Display', serif;
   font-size: 24px;
-  color: #ffff;
-  margin: 5px 0 0 0;     /* kasih jarak rapat ke atas (5px aja) */
-    display: inline-block; /* biar lebarnya ikut teks */
-  white-space: nowrap;   /* cegah teks turun baris */
+  color: #fff;
+  margin: 5px 0 0 0;
+  white-space: normal;   /* biar bisa turun baris */
+  display: block;        /* default, biar full width */
 }
 
     .btn {
