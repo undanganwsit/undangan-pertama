@@ -63,7 +63,7 @@ function saveToCalendar() {
   const start = "20251114T000000Z"; // 14 Nov 2025, 07:00 WIB
   const end   = "20251114T050000Z"; // 14 Nov 2025, 12:00 WIB
   const details = "Undangan pernikahan Putri & Putra ";
-  const location = "https://maps.app.goo.gl/SudKTfmu81KAoeNU7"; // link Google Maps
+  const location = "https://maps.app.goo.gl/fGkJCddBoqoEkyeW7"; // link Google Maps
 
   const url = `https://calendar.google.com/calendar/r/eventedit?text=${encodeURIComponent(title)}&dates=${start}/${end}&details=${encodeURIComponent(details)}&location=${encodeURIComponent(location)}`;
   
