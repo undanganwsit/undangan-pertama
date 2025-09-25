@@ -701,7 +701,7 @@ section {
   text-align: center;
   overflow: hidden;
   isolation: isolate;
-  min-height: 240vh; /* ⬅️ 2 kali tinggi layar */
+  min-height: 280vh; /* ⬅️ 2 kali tinggi layar */
 }
 
 #hadiah-ucapan::before {
